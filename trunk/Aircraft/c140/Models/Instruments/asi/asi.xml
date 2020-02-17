@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+	
+	<path>asi.ac</path>
+	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>asi.glass</object-name>
+	</effect>
+	
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>asi.glass</object-name>
+	</effect>
+	
+	<animation>
+		<type>material</type>
+		<object-name>asi.base</object-name>
+		<object-name>asi.needle</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+			<red>   0.07 </red>
+			<green> 0.02 </green>
+			<blue>  0.02 </blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>asi.needle</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry><ind>   0.0   </ind><dep>   0.0  </dep></entry>
+			<entry><ind>  34.759 </ind><dep>  48.16 </dep></entry> <!-- 40mph-->
+			<entry><ind>  86.898 </ind><dep> 194.17 </dep></entry> <!--100mph-->
+			<entry><ind> 173.795 </ind><dep> 334.16 </dep></entry> <!--200mph-->
+		</interpolation>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+	
+</PropertyList>

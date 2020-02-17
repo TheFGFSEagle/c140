@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList include="c140-base.xml">
+	<sim>
+		<description>Cessna 140</description>
+		<author>Benedikt Wolf (D-ECHO)</author>
+		<aircraft-version>02/2020</aircraft-version>
+		<status>alpha</status>
+		<flight-model archive="y">jsb</flight-model>
+		<aero archive="y">c140</aero>
+		<previews>
+			<preview>
+				<type>cockpit</type>
+				<splash type="bool">true</splash>
+				<path>Splash/cockpit1.jpg</path>
+			</preview>
+			<preview>
+				<type>cockpit</type>
+				<splash type="bool">true</splash>
+				<path>Splash/cockpit2.jpg</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/exterior1.jpg</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/exterior2.jpg</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/exterior3.jpg</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/exterior4.jpg</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/exterior5.jpg</path>
+			</preview>
+		</previews>
+		<rating>
+			<FDM type="int">0</FDM>
+			<systems type="int">0</systems>
+			<cockpit type="int">0</cockpit>
+			<model type="int">0</model>
+		</rating>
+		<fuel-fraction>0.5</fuel-fraction>
+	</sim>
+</PropertyList>

@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>c140.ac</path>
+	
+	<!-- Effects -->
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>glass</object-name>
+	</effect>
+	
+	<!-- Include Lights -->
+	<!-- The Cessna 140 is equipped with the following:
+		*Navigation lights (Wings+Rudder)
+		*Landing lights (optional!)
+	-->
+	<model>
+		<path>Lights/tail-navlight.xml</path>
+		<offsets>
+			<x-m>3.381</x-m>
+			<z-m>0.729</z-m>
+		</offsets>
+	</model>
+	
+	<!-- Instrument Panel -->
+	<!-- Instruments -->
+	<!-- 80mm -->
+	<model>
+		<path>Instruments/asi/asi.xml</path>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>-0.223687</y-m>
+			<z-m>0.219743</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/alt/alt.xml</path>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>-0.11036</y-m>
+			<z-m>0.219743</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/rpm/rpm.xml</path>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.186422</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/ai/ai.xml</path>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>0.11036</y-m>
+			<z-m>0.219743</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/vsi/vsi.xml</path>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>0.223687</y-m>
+			<z-m>0.219743</z-m>
+		</offsets>
+	</model>
+	<!-- 57mm -->
+	<model>
+		<path>Instruments/compass/compass.xml</path>
+		<offsets>
+			<x-m>-1.89</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.264509</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/tc/tc.xml</path>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>-0.329168</y-m>
+			<z-m>0.201207</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/clock/clock.xml</path>
+		<offsets>
+			<x-m>-1.862</x-m>
+			<y-m>0.329168</y-m>
+			<z-m>0.201207</z-m>
+		</offsets>
+	</model>
+	<!-- small -->
+	<model>
+		<path>Instruments/engine/amps.xml</path>
+		<offsets>
+			<x-m>-1.868</x-m>
+			<y-m>-0.16126</y-m>
+			<z-m>0.13142</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/engine/oilpress.xml</path>
+		<offsets>
+			<x-m>-1.868</x-m>
+			<y-m>-0.1041</y-m>
+			<z-m> 0.13142</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/engine/oiltemp.xml</path>
+		<offsets>
+			<x-m>-1.868</x-m>
+			<y-m>0.1041</y-m>
+			<z-m> 0.13142</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/engine/fuel.xml</path>
+		<offsets>
+			<x-m>-1.868</x-m>
+			<y-m>0.16126</y-m>
+			<z-m>0.13142</z-m>
+		</offsets>
+	</model>
+	<!-- Parts -->
+	<model>
+		<path>Aircraft/Instruments-3d/magneto-switch/mags.xml</path>
+		<offsets>
+			<x-m>-1.86644</x-m>
+			<y-m>-0.434404</y-m>
+			<z-m>0.185</z-m>
+		</offsets>
+	</model>
+	
+	<!-- Animations -->
+	<!-- Yoke -->
+	<animation>
+		<type>rotate</type>
+		<object-name>yoke.L</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>-30</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>-0.257299</y-m>
+			<z-m>0.124333</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>yoke.L</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>-0.15</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+	<!-- Flight Control Surfaces -->
+	<!-- Ailerons -->
+	<animation>
+		<type>rotate</type>
+		<object-name>aileronL</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-24</factor>
+		<axis>
+			<x1-m>-0.691601</x1-m>
+			<y1-m>-2.61523</y1-m>
+			<z1-m>0.644366</z1-m>
+			<x2-m>-0.688097</x2-m>
+			<y2-m>-4.53279</y2-m>
+			<z2-m>0.678244</z2-m>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>aileronR</object-name>
+		<property>surface-positions/right-aileron-pos-norm</property>
+		<factor>-24</factor>
+		<axis>
+			<x1-m>-0.691601</x1-m>
+			<y1-m>-2.61523</y1-m>
+			<z1-m>0.644366</z1-m>
+			<x2-m>-0.688097</x2-m>
+			<y2-m>-4.53279</y2-m>
+			<z2-m>0.678244</z2-m>
+		</axis>
+	</animation>
+	
+</PropertyList>
