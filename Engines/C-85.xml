@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+	<!-- Reference
+		[1]	Instruction and Service Manual	https://www.manualslib.com/download/1014632/Continental-Motors-C75.html
+	-->
+<piston_engine name="C-85">
+	<minmp unit="INHG">         10.0 </minmp>
+	<maxmp unit="INHG">         28.5 </maxmp>
+	<displacement unit="IN3"> 188 </displacement>
+	<maxhp>        85 </maxhp>
+	<cycles>         4.0 </cycles>
+	<idlerpm>      700.0 </idlerpm>
+	<maxrpm>      2800.0 </maxrpm>
+	<sparkfaildrop>  0.1 </sparkfaildrop>
+	<volumetric-efficiency> 0.85 </volumetric-efficiency>
+	<man-press-lag> 0.1 </man-press-lag>
+	<static-friction  unit="HP"> 0.425 </static-friction>
+	<starter-torque> 68 </starter-torque>
+	<starter-rpm> 1400 </starter-rpm>
+	<!-- Defining <bsfc> over-rides the built-in horsepower calculations -->
+	<!--<bsfc>           0.45 </bsfc>-->
+	<stroke unit="IN">  3.625 </stroke>
+	<bore unit="IN">    4.0625 </bore>
+	<cylinders>         4 </cylinders>
+	<compression-ratio>  6.5 </compression-ratio>
+</piston_engine>

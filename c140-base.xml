@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+	<sim>
+		<model>
+			<path>Models/c140.xml</path>
+		</model>
+		<view>
+			<name>Cockpit View</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<x-offset-m type="double">-0.257</x-offset-m>
+				<y-offset-m type="double">0.4</y-offset-m>
+				<z-offset-m type="double">-1.2</z-offset-m>
+			</config>
+		</view>
+	</sim>
+</PropertyList>

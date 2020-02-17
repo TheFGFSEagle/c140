@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>ammeter.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>Circle</object-name>
+        <object-name>hand</object-name>
+    </effect>
+
+
+    <animation>
+        <type>material</type>
+        <object-name>Circle</object-name>
+        <object-name>hand</object-name>
+        <emission>
+            <red>1.0</red>
+            <green>0.2</green>
+            <blue>0.0</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>hand</object-name>
+    <property>systems/electrical/amps</property>
+    <interpolation>
+      <entry>
+        <ind>-60</ind>
+        <dep>-25</dep>
+      </entry>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>60</ind>
+        <dep>25</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>0.002</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.019</z-m>
+    </center>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+</PropertyList>

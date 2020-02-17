@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<path>fuel.ac</path>
+	
+	<animation>
+		<type>material</type>
+		<object-name>fuel.base</object-name>
+		<object-name>fuel.needle</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.2</green>
+			<blue>0.0</blue>
+			<factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>fuel.needle.L</object-name>
+		<property>/consumables/fuel/tank/level-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>64</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>296</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>fuel.needle.R</object-name>
+		<property>/consumables/fuel/tank[1]/level-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>64</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>296</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+</PropertyList>
+
+
