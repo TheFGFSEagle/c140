@@ -92,7 +92,7 @@
 		<location name="CG" unit="M">
 			<x> -1.58 </x>
 			<y>  0.00 </y>
-			<z>  0.00 </z>
+			<z>  -0.30 </z>
 		</location>
 		<pointmass name="Pilot">
 			<weight unit="KG"> 80 </weight>
@@ -185,8 +185,8 @@
 		<contact type="BOGEY" name="LEFT_MAIN">
 			<location unit="M">
 				<x>  -1.95 </x>
-				<y>  -1.00 </y>
-				<z>  -1.35 </z>
+				<y>  -0.92 </y>
+				<z>  -1.399 </z>
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
@@ -201,8 +201,8 @@
 		<contact type="BOGEY" name="RIGHT_MAIN">
 			<location unit="M">
 				<x>  -1.95 </x>
-				<y>   1.00 </y>
-				<z>  -1.35 </z>
+				<y>   0.92 </y>
+				<z>  -1.399 </z>
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>

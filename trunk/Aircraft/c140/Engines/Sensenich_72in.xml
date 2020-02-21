@@ -20,12 +20,12 @@ static thrust (lbs): 224.23
 -->
 
 <propeller version="1.01" name="prop">
-	<ixx> 3.98497 </ixx>
+	<ixx> 1.3 </ixx>
 	<diameter unit="IN"> 72 </diameter>
 	<numblades> 2 </numblades>
 	<gearratio> 1 </gearratio>
 	<cp_factor> 1.00 </cp_factor>
-	<ct_factor> 2 </ct_factor>
+	<ct_factor> 1.00 </ct_factor>
 	
 	<table name="C_THRUST" type="internal">
 		<tableData>

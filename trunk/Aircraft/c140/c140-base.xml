@@ -14,5 +14,42 @@
 				<z-offset-m type="double">-1.2</z-offset-m>
 			</config>
 		</view>
+		<systems>
+			<electrical>
+				<path></path> <!-- Disable generic XML electrical system -->
+			</electrical>
+		</systems>
 	</sim>
+	<controls>
+		<circuit-breakers>
+			<master type="bool">1</master>
+			<generator type="bool">1</generator>
+			<radio type="bool">1</radio>
+			<landing-light-motors type="bool">1</landing-light-motors>
+			<landing-light-left type="bool">1</landing-light-left>
+			<landing-light-right type="bool">1</landing-light-right>
+			<instr-navlt type="bool">1</instr-navlt>
+			<turn-coordinator type="bool">1</turn-coordinator>
+		</circuit-breakers>
+		<lighting>
+			<landing-lights-transit type="bool">0</landing-lights-transit>
+		</lighting>
+		<switches>
+			<master type="bool">0</master>
+			<nav-lights type="bool">0</nav-lights>
+			<landing-lights type="bool">0</landing-lights>
+			<turn-coordinator type="bool">0</turn-coordinator>
+			<starter type="bool">0</starter>
+		</switches>
+	</controls>
+	<nasal>
+		<updateloop>
+			<file>Aircraft/Generic/updateloop.nas</file>
+		</updateloop>
+		<c140>
+			<file>Nasal/electrical.nas</file>
+			<file>Nasal/kx165a.nas</file>
+		</c140>
+	</nasal>
+	<refl-factor type="double">0.0</refl-factor>
 </PropertyList>

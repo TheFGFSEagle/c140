@@ -4,7 +4,7 @@
 	<path>green-navlight.ac</path>
 	<nopreview/>
 	<effect>
-		<inherits-from>Aircraft/QSeries/Models/lights/ALS/green-navlight</inherits-from>
+		<inherits-from>Aircraft/c140/Models/Lights/green-navlight</inherits-from>
 		<object-name>green-navlight</object-name>
 	</effect>
 	<animation>
