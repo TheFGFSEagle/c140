@@ -46,8 +46,8 @@
 		<aerosurface_scale name="Left Aileron Control">
 			<input>fcs/roll-trim-sum</input>
 			<range>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min> -0.384 </min>
+				<max>  0.244 </max>
 			</range>
 			<output>fcs/left-aileron-pos-rad</output>
 		</aerosurface_scale>
@@ -55,8 +55,8 @@
 		<aerosurface_scale name="Right Aileron Control">
 			<input>-fcs/roll-trim-sum</input>
 			<range>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min> -0.384 </min>
+				<max>  0.244 </max>
 			</range>
 			<output>fcs/right-aileron-pos-rad</output>
 		</aerosurface_scale>
@@ -64,8 +64,8 @@
 		<aerosurface_scale name="Left Aileron Normalization">
 			<input>fcs/left-aileron-pos-rad</input>
 			<domain>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min> -0.384 </min>
+				<max>  0.384 </max>
 			</domain>
 			<range>
 				<min> -1 </min>
@@ -77,8 +77,8 @@
 		<aerosurface_scale name="Right Aileron Normalization">
 			<input>fcs/right-aileron-pos-rad</input>
 			<domain>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min> -0.384 </min>
+				<max>  0.384 </max>
 			</domain>
 			<range>
 				<min> -1 </min>
@@ -101,8 +101,8 @@
 		<aerosurface_scale name="Rudder Control">
 			<input>fcs/rudder-command-sum</input>
 			<range>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min> -0.279 </min>
+				<max>  0.279 </max>
 			</range>
 			<output>fcs/rudder-pos-rad</output>
 		</aerosurface_scale>
@@ -110,8 +110,8 @@
 		<aerosurface_scale name="Rudder Normalization">
 			<input>fcs/rudder-pos-rad</input>
 			<domain>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min> -0.279 </min>
+				<max>  0.279 </max>
 			</domain>
 			<range>
 				<min> -1 </min>
@@ -139,7 +139,7 @@
 					<time>      4 </time>
 				</setting>
 				<setting>
-					<position> 30 </position>
+					<position> 40 </position>
 					<time>      3 </time>
 				</setting>
 			</traverse>
@@ -150,7 +150,7 @@
 			<input>fcs/flap-pos-deg</input>
 			<domain>
 				<min>  0 </min>
-				<max> 30 </max>
+				<max> 40 </max>
 			</domain>
 			<range>
 				<min> 0 </min>

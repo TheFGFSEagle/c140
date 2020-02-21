@@ -8,12 +8,34 @@
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>glass</object-name>
 	</effect>
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/panel-reflection</inherits-from>
+		<object-name>panel-reflective</object-name>
+		<object-name>yoke.L</object-name>
+		<object-name>yoke.R</object-name>
+	</effect>
 	
 	<!-- Include Lights -->
 	<!-- The Cessna 140 is equipped with the following:
 		*Navigation lights (Wings+Rudder)
 		*Landing lights (optional!)
 	-->
+	<model>
+		<path>Lights/red-navlight.xml</path>
+		<offsets>
+			<x-m>-1.33853</x-m>
+			<y-m>-5.04</y-m>
+			<z-m>0.734383</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Lights/green-navlight.xml</path>
+		<offsets>
+			<x-m>-1.33853</x-m>
+			<y-m>5.04</y-m>
+			<z-m>0.734383</z-m>
+		</offsets>
+	</model>
 	<model>
 		<path>Lights/tail-navlight.xml</path>
 		<offsets>
@@ -22,7 +44,7 @@
 		</offsets>
 	</model>
 	
-	<!-- Instrument Panel -->
+	<!-- INSTRUMENT PANEL -->
 	<!-- Instruments -->
 	<!-- 80mm -->
 	<model>
@@ -44,7 +66,7 @@
 	<model>
 		<path>Instruments/rpm/rpm.xml</path>
 		<offsets>
-			<x-m>-1.85344</x-m>
+			<x-m>-1.86</x-m>
 			<y-m>0.0</y-m>
 			<z-m>0.186422</z-m>
 		</offsets>
@@ -52,7 +74,7 @@
 	<model>
 		<path>Instruments/ai/ai.xml</path>
 		<offsets>
-			<x-m>-1.85344</x-m>
+			<x-m>-1.8555</x-m>
 			<y-m>0.11036</y-m>
 			<z-m>0.219743</z-m>
 		</offsets>
@@ -123,9 +145,18 @@
 			<z-m>0.13142</z-m>
 		</offsets>
 	</model>
+	<!-- Radio Stack -->
+	<model>
+		<path>Instruments/kx165/kx165-1.xml</path>
+		<offsets>
+			<x-m>-1.85</x-m>
+			<y-m>-0.386616</y-m>
+			<z-m>0.091783</z-m>
+		</offsets>
+	</model>
 	<!-- Parts -->
 	<model>
-		<path>Aircraft/Instruments-3d/magneto-switch/mags.xml</path>
+		<path>Instruments/magneto-switch/mags.xml</path>
 		<offsets>
 			<x-m>-1.86644</x-m>
 			<y-m>-0.434404</y-m>
@@ -133,7 +164,234 @@
 		</offsets>
 	</model>
 	
-	<!-- Animations -->
+	<!-- ### ANIMATIONS ### -->
+	<!-- Instrument Panel -->
+	<!-- Switches -->
+	<animation>
+		<type>knob</type>
+		<object-name>master.switch</object-name>
+		<property>controls/switches/master</property>
+		<factor>10</factor>
+		<center>
+			<x-m>-1.85378</x-m>
+			<z-m>0.020205</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/master</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>tb.switch</object-name>
+		<property>controls/switches/turn-coordinator</property>
+		<factor>10</factor>
+		<center>
+			<x-m>-1.85378</x-m>
+			<z-m>0.020205</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/turn-coordinator</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>navlts.switch</object-name>
+		<property>controls/switches/nav-lights</property>
+		<factor>10</factor>
+		<center>
+			<x-m>-1.85378</x-m>
+			<z-m>0.020205</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/nav-lights</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>ldglts.switch</object-name>
+		<property>controls/switches/landing-lights</property>
+		<factor>10</factor>
+		<center>
+			<x-m>-1.85378</x-m>
+			<z-m>0.020205</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/landing-lights</property>
+			</binding>
+		</action>
+	</animation>
+	<!-- Levers -->
+	<!-- Throttle -->
+	<animation>
+		<type>slider</type>
+		<drag-direction>vertical</drag-direction>
+		<object-name>throttle.lever</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<factor>-0.0579</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<min>0.0</min>
+				<max>1.0</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<!-- Other Levers - left to right -->
+	<animation>
+		<type>slider</type>
+		<drag-direction>vertical</drag-direction>
+		<object-name>mixture.lever</object-name>
+		<property>controls/engines/engine[0]/mixture</property>
+		<factor>-0.04</factor>
+		<offset-m>0.04</offset-m>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/mixture</property>
+				<min>0.0</min>
+				<max>1.0</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>slider</type>
+		<drag-direction>vertical</drag-direction>
+		<object-name>carbheat.lever</object-name>
+		<property>controls/engines/engine[0]/carburetor-heat</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/carburetor-heat</property>
+				<min>0.0</min>
+				<max>1.0</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>slider</type>
+		<drag-direction>vertical</drag-direction>
+		<object-name>parkbrake.lever</object-name>
+		<property>controls/gear/brake-parking</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/gear/brake-parking</property>
+				<min>0.0</min>
+				<max>1.0</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>slider</type>
+		<drag-direction>vertical</drag-direction>
+		<object-name>cabinheat.lever</object-name>
+		<property>controls/cabin/cabin-heat-lever</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/cabin/cabin-heat-lever</property>
+				<min>0.0</min>
+				<max>1.0</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<drag-direction>vertical</drag-direction>
+		<object-name>starter.lever</object-name>
+		<property>controls/switches/starter</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>starter.lever</object-name>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/switches/starter</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/switches/starter</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
 	<!-- Yoke -->
 	<animation>
 		<type>rotate</type>
@@ -149,21 +407,66 @@
 		</center>
 	</animation>
 	<animation>
+		<type>rotate</type>
+		<object-name>yoke.R</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>-30</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>0.257299</y-m>
+			<z-m>0.124333</z-m>
+		</center>
+	</animation>
+	<animation>
 		<type>translate</type>
 		<object-name>yoke.L</object-name>
+		<object-name>yoke.R</object-name>
 		<property>/controls/flight/elevator</property>
 		<factor>-0.15</factor>
 		<axis>
 			<x>1</x>
 		</axis>
 	</animation>
-	<!-- Flight Control Surfaces -->
+	<!-- LANDING GEAR -->
+	<animation>
+		<type>rotate</type>
+		<object-name>gear.L</object-name>
+		<object-name>wheel.L</object-name>
+		<property>gear/gear[1]/compression-ft</property>
+		<offset-deg>5</offset-deg>
+		<factor>-27</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>-0.39272</y-m>
+			<z-m>-0.482887</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>gear.R</object-name>
+		<object-name>wheel.R</object-name>
+		<property>gear/gear[2]/compression-ft</property>
+		<offset-deg>-5</offset-deg>
+		<factor>27</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.39272</y-m>
+			<z-m>-0.482887</z-m>
+		</center>
+	</animation>
+	<!-- FLIGHT CONROL SURFACES -->
 	<!-- Ailerons -->
 	<animation>
 		<type>rotate</type>
-		<object-name>aileronL</object-name>
+		<object-name>aileron.L</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-24</factor>
+		<factor>-22</factor>
 		<axis>
 			<x1-m>-0.691601</x1-m>
 			<y1-m>-2.61523</y1-m>
@@ -175,9 +478,9 @@
 	</animation>
 	<animation>
 		<type>rotate</type>
-		<object-name>aileronR</object-name>
+		<object-name>aileron.R</object-name>
 		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>-24</factor>
+		<factor>-22</factor>
 		<axis>
 			<x1-m>-0.691601</x1-m>
 			<y1-m>-2.61523</y1-m>
@@ -186,6 +489,62 @@
 			<y2-m>-4.53279</y2-m>
 			<z2-m>0.678244</z2-m>
 		</axis>
+	</animation>
+	<!-- Flaps -->
+	<animation>
+		<type>rotate</type>
+		<object-name>flap.L</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>-40</factor>
+		<axis>
+			<x1-m>-0.585</x1-m>
+			<y1-m>-0.579607</y1-m>
+			<z1-m>0.570386</z1-m>
+			<x2-m>-0.585</x2-m>
+			<y2-m>-2.60799</y2-m>
+			<z2-m>0.605848</z2-m>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>flap.R</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>40</factor>
+		<axis>
+			<x1-m>-0.585</x1-m>
+			<y1-m>0.579607</y1-m>
+			<z1-m>0.570386</z1-m>
+			<x2-m>-0.585</x2-m>
+			<y2-m>2.60799</y2-m>
+			<z2-m>0.605848</z2-m>
+		</axis>
+	</animation>
+	<!-- Rudder -->
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>16</factor>
+		<axis>
+			<z>1</z>
+		</axis>
+		<center>
+			<x-m>2.86955</x-m>
+		</center>
+	</animation>
+	<!-- Elevator -->
+	<animation>
+		<type>rotate</type>
+		<object-name>elevator</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>16</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+		<center>
+			<x-m>2.83795</x-m>
+			<z-m>0.17061</z-m>
+		</center>
 	</animation>
 	
 </PropertyList>

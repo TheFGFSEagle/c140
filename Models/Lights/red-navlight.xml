@@ -4,7 +4,7 @@
 	<path>red-navlight.ac</path>
 	<nopreview/>
 	<effect>
-		<inherits-from>Aircraft/QSeries/Models/lights/ALS/red-navlight</inherits-from>
+		<inherits-from>Aircraft/c140/Models/Lights/red-navlight</inherits-from>
 		<object-name>red-navlight</object-name>
 	</effect>
 	<animation>
