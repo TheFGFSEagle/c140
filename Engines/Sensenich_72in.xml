@@ -19,13 +19,28 @@ Ct0: 0.0250001
 static thrust (lbs): 224.23
 -->
 
+<!-- 	This models a wooden Sensenich 74FK-49 propeller	 -->
+<!-- 	Reference:
+		[1]	Type Certificate Cessna 140	https://www.sensenich.com/wp-content/uploads/2018/01/Aircraft_Type_Certificates_Cessna_120_1302111219.pdf
+-->
+<!--	Notes about inertia calculation:
+		There is no information about the mass of this propeller available. Thus, we're using a comparable Sensenich propeller (W 69EK)
+		Ref: http://www.sensenich.com/wp-content/uploads/2018/11/TCDS.P00001NY.rev6-2018-08-15.pdf
+		
+		http://wiki.flightgear.org/JSBSim_Thrusters states that ixx is about m*D^2/12
+			m	=	4.31kg (9.5 lbs)
+			D	=	1.8288m (72 in)
+			
+			ixx 	= 	4.31kg * (1.8288m)^2 / 12
+				=	1.201 kg*m^2
+-->
 <propeller version="1.01" name="prop">
-	<ixx> 1.3 </ixx>
+	<ixx unit="KG*M2"> 1.201 </ixx>
 	<diameter unit="IN"> 72 </diameter>
 	<numblades> 2 </numblades>
 	<gearratio> 1 </gearratio>
-	<cp_factor> 1.00 </cp_factor>
-	<ct_factor> 1.00 </ct_factor>
+	<cp_factor> 1.0 </cp_factor>
+	<ct_factor> 1.1 </ct_factor>
 	
 	<table name="C_THRUST" type="internal">
 		<tableData>
