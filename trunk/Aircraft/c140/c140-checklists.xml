@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+	<checklist>
+		<title>Preflight Inspection</title>
+		<page>
+			<item>
+				<name>Oil Level (not yet implemented)</name>
+				<value>CHECK</value>
+			</item>
+			<item>
+				<name>Visual Inspection of Airframe</name>
+				<value>COMPLETE, NO DAMAGES</value>
+			</item>
+			<item>
+				<name>Control lock (not yet implemented)</name>
+				<value>REMOVE</value>
+				<value>(if existing)</value>
+			</item>
+			<item>
+				<name>In case of first flight of the day</name>
+			</item>
+			<item>
+				<name>Fuel (not yet implemented)</name>
+				<value>Drain about one ounce from fuel strainer</value>
+				<value>Ensure no water in fuel lines</value>
+			</item>
+		</page>
+	</checklist>
+	
+	<checklist>
+		<title>Before Starting Engine</title>
+		<item>
+			<name>Control Surfaces</name>
+			<value>CHECK OPERATION</value>
+		</item>
+		<item>
+			<name>Windshield</name>
+			<value>CHECK CLEAN</value>
+		</item>
+		<item>
+			<name>Brakes</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>Parking Brake</name>
+			<value>SET</value>
+			<condition>
+				<equals>
+					<property>/controls/gear/brake-parking</property>
+					<value>1.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/gear/brake-parking</property>
+				<value type="float">1.0</value>
+			</binding>
+		</item>
+		<item>
+			<name>Seat (not yet implemented)</name>
+			<value>ADJUST</value>
+		</item>
+		<item>
+			<name>Seat Belts (not yet implemented)</name>
+			<value>FASTEN and CHECK</value>
+		</item>
+		<item>
+			<name>Fuel Quantity</name>
+			<value>CHECK SUFFICIENT</value>
+		</item>
+	</checklist>
+	
+	<checklist>
+		<title>Starting Engine</title>
+		<page>
+			<item>
+				<name>Carburetor Heat</name>
+				<value>COLD</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine[0]/carburetor-heat</property>
+						<value>0.0</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[0]/carburetor-heat</property>
+					<value type="float">0.0</value>
+				</binding>
+			</item>
+			<item>
+				<name>Mixture</name>
+				<value>FULL RICH</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine[0]/mixture</property>
+						<value>1.0</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[0]/carburetor-heat</property>
+					<value type="float">1.0</value>
+				</binding>
+			</item>
+			<item>
+				<name>Fuel Tank Selector (not yet implemented)</name>
+				<value>SET TO FULLEST TANK</value>
+			</item>
+			<item>
+				<name>Master Switch</name>
+				<value>ON</value>
+				<condition>
+					<equals>
+						<property>/controls/switches/master</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/switches/master</property>
+					<value>1</value>
+				</binding>
+			</item>
+		</page>
+		<page>
+			<item>
+				<name>If Engine COLD</name>
+			</item>
+			<item>
+				<name>(OMIT THIS PAGE if temperature > 50F/10C)</name>
+			</item>
+			<item>
+				<name>PRIME the engine:</name>
+			</item>
+			<item>
+				<name>Propeller</name>
+				<value>CLEAR</value>
+			</item>
+			<item>
+				<name>Magneto Switch</name>
+				<value>CHECK OFF</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine/magnetos</property>
+						<value>0</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>0</value>
+				</binding>
+			</item>
+			<item>
+				<name>Throttle</name>
+				<value>CHECK CLOSED</value>
+				<condition>
+					<less-than>
+						<property>/controls/engines/engine/throttle</property>
+						<value>0.05</value>
+					</less-than>
+				</condition>
+				<binding>
+					<command>property-interpolate</command>
+					<property>/controls/engines/engine/throttle</property>
+					<value>0.0</value>
+					<rate>0.2</rate>
+				</binding>
+			</item>
+			<item>
+				<name>At the same time, engage starter and Primer</name>
+				<value>3-4 strokes</value>
+			</item>
+		</page>
+		<page>
+			<item>
+				<name>Magneto Switch</name>
+				<value>BOTH</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine/magnetos</property>
+						<value>3</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>3</value>
+				</binding>
+			</item>
+			<item>
+				<name>Throttle</name>
+				<value>OPEN 1/8</value>
+				<condition>
+					<greater-than-equals>
+						<property>/controls/engines/engine[0]/throttle</property>
+						<value>0.1</value>
+					</greater-than-equals>
+					<less-than-equals>
+						<property>/controls/engines/engine[0]/throttle</property>
+						<value>0.15</value>
+					</less-than-equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[0]/throttle</property>
+					<value>0.125</value>
+				</binding>
+			</item>
+			<item>
+				<name>Starter</name>
+				<value>PULL and HOLD until engine starts</value>
+			</item>
+			<item>
+				<name>In extremely cold weather</name>
+			</item>
+			<item>
+				<name>Primer</name>
+				<value>a few strokes while engine catches to keep engine running</value>
+			</item>
+			<item>
+				<name>In case of engine not starting</name>
+			</item>
+			<item>
+				<name>Starter</name>
+				<value>OFF, only try again after propeller has FULLY STOPPED</value>
+			</item>
+		</page>
+	</checklist>
+	
+	<checklist>
+		<title>After Engine Start / Warm-Up</title>
+		<item>
+			<name>Engine RPM</name>
+			<value>AT or BELOW 800 for 60 seconds</value>
+			<condition>
+				<less-than-equals>
+					<property>/engines/engine[0]/rpm</property>
+					<value>800</value>
+				</less-than-equals>
+			</condition>
+		</item>
+		<item>
+			<name>Oil Pressure</name>
+			<value>CHECK PRESSURE READING after less than 30 seconds</value>
+			<value>IF NO READING: SHUT DOWN ENGINE</value>
+		</item>
+		<item>
+			<name>Carburetor Heat</name>
+			<value>FULL</value>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine[0]/carburetor-heat</property>
+					<value>1.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/engines/engine[0]/carburetor-heat</property>
+				<value type="float">1.0</value>
+			</binding>
+		</item>
+		<item>
+			<name>After 2-3 minutes</name>
+		</item>
+		<item>
+			<name>Engine RPM</name>
+			<value>Slowly increase to 1200-1500</value>
+			<condition>
+				<greater-than-equals>
+					<property>/engines/engine[0]/rpm</property>
+					<value>1200</value>
+				</greater-than-equals>
+				<less-than-equals>
+					<property>/engines/engine[0]/rpm</property>
+					<value>1500</value>
+				</less-than-equals>
+			</condition>
+			<value>for additional 3-5 minutes</value>
+		</item>
+		<item>
+			<name>Carburetor Heat</name>
+			<value>COLD</value>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine[0]/carburetor-heat</property>
+					<value>0.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/engines/engine[0]/carburetor-heat</property>
+				<value type="float">0.0</value>
+			</binding>
+		</item>
+	</checklist>
+	<checklist>
+		<title>Before Takeoff</title>
+		<page>
+			<item>
+				<name>Brakes</name>
+				<value>Apply</value>
+				<condition>
+					<equals>
+						<property>/controls/gear/brake-left</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/controls/gear/brake-right</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/gear/brake-left</property>
+					<value>1</value>
+				</binding>>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/gear/brake-right</property>
+					<value>1</value>
+				</binding>
+			</item>
+			<item>
+				<name>Altimeter</name>
+				<value>SET</value>
+			</item>
+			<item>
+				<name>Elevator Trim (not yet implemented)</name>
+				<value>SET for TAKEOFF</value>
+			</item>
+			<item>
+				<name>Oil Pressure</name>
+				<value>30-40psi, MINIMUM 10psi when idle</value>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>1800</value>
+			<condition>
+				<greater-than-equals>
+					<property>/engines/engine[0]/rpm</property>
+					<value>1750</value>
+				</greater-than-equals>
+				<less-than-equals>
+					<property>/engines/engine[0]/rpm</property>
+					<value>1850</value>
+				</less-than-equals>
+			</condition>
+			</item>
+			<item>
+				<name>Magneto Check</name>
+			</item>
+			<item>
+				<name>Magneto Switch</name>
+				<value>RIGHT</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine/magnetos</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>1</value>
+				</binding>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>VISIBLE DROP, NO MORE THAN 50RPM</value>
+			</item>
+			<item>
+				<name>Magneto Switch</name>
+				<value>BOTH</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine/magnetos</property>
+						<value>3</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>3</value>
+				</binding>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>RETURN to previous value</value>
+			</item>
+			<item>
+				<name>Magneto Switch</name>
+				<value>LEFT</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine/magnetos</property>
+						<value>2</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>2</value>
+				</binding>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>VISIBLE DROP, NO MORE THAN 75RPM (from original value)</value>
+			</item>
+			<item>
+				<name>Magneto Switch</name>
+				<value>BOTH</value>
+				<condition>
+					<equals>
+						<property>/controls/engines/engine/magnetos</property>
+						<value>3</value>
+					</equals>
+				</condition>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>3</value>
+				</binding>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>RETURN to previous value</value>
+			</item>
+			<item>
+				<name>Throttle</name>
+				<value>FULL</value>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>CHECK MINIMUM 1900</value>
+			</item>
+			<item>
+				<name>Throttle</name>
+				<value>IDLE</value>
+			</item>
+			<item>
+				<name>Engine RPM</name>
+				<value>CHECK 500-550</value>
+			</item>
+		</page>
+	</checklist>
+	
+	<checklist>
+		<title>Takeoff</title>
+		<item>
+			<name>Brakes</name>
+			<value>RELEASE</value>
+			<condition>
+				<equals>
+					<property>/controls/gear/brake-left</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/controls/gear/brake-right</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/gear/brake-left</property>
+				<value>0</value>
+			</binding>>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/gear/brake-right</property>
+				<value>0</value>
+			</binding>
+		</item>
+		<item>
+			<name>Carburetor Heat</name>
+			<value>COLD</value>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine[0]/carburetor-heat</property>
+					<value>0.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/engines/engine[0]/carburetor-heat</property>
+				<value type="float">0.0</value>
+			</binding>
+		</item>
+		<item>
+			<name>Throttle</name>
+			<value>FULL OPEN</value>
+		</item>
+		<item>
+			<name>Best Climb Airspeed</name>
+			<value>73MPH INDICATED</value>
+		</item>
+	</checklist>
+	
+	<checklist>
+		<title>Cruise</title>
+		<item>
+			<name>Cruise Engine RPM</name>
+			<value>2400, DO NOT EXCEED 2575</value>
+		</item>
+		<item>
+			<name>Elevator Trim</name>
+			<value>SET to relieve yoke force</value>
+		</item>
+		<item>
+			<name>Oil Pressure</name>
+			<value>CHECK 30-40 PSI</value>
+		</item>
+		<item>
+			<name>Oil Temperature</name>
+			<value>CHECK MAX 220°F</value>
+		</item>
+		<item>
+			<name>Mixture</name>
+			<value>ABOVE 5000ft, LEAN to obtain MAXIMUM RPM</value>
+		</item>
+	</checklist>
+	
+	<checklist>
+		<title>Before Landing</title>
+		<item>
+			<name>Fuel Tank Selector (not yet implemented)</name>
+			<value>SET TO FULLEST TANK</value>
+		</item>
+		<item>
+			<name>Mixture</name>
+			<value>FULL RICH</value>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine[0]/mixture</property>
+					<value>1.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/engines/engine[0]/carburetor-heat</property>
+				<value type="float">1.0</value>
+			</binding>
+		</item>
+		<item>
+			<name>Carburetor Heat</name>
+			<value>FULL before CLOSING THROTTLE</value>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine[0]/carburetor-heat</property>
+					<value>1.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/engines/engine[0]/carburetor-heat</property>
+				<value type="float">1.0</value>
+			</binding>
+		</item>
+		<item>
+			<name>Airspeed</name>
+			<value>SUGGESTED 65-70MPH</value>
+		</item>
+		<item>
+			<name>Flaps</name>
+			<value>AS DESIRED BELOW 82MPH</value>
+			<condition>
+				<less-than>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>71.26</value>
+				</less-than>
+			</condition>
+		</item>
+	</checklist>
+	
+	<checklist>
+		<title>After Landing</title>
+		<item>
+			<name>Flaps</name>
+			<value>UP</value>
+			<condition>
+				<equals>
+					<property>/surface-positions/flaps-pos-norm</property>
+					<value>0.0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/flight/flaps</property>
+				<value type="float">0.0</value>
+			</binding>
+		</item>
+		<item>
+			<name>When Parked</name>
+		</item>
+		<item>
+			<name>Magneto Switch</name>
+			<value>OFF</value>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine/magnetos</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/engines/engine/magnetos</property>
+				<value>0</value>
+			</binding>
+		</item>
+		<item>
+			<name>Master Switch</name>
+			<value>OFF</value>
+			<condition>
+				<equals>
+					<property>/controls/switches/master</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/switches/master</property>
+				<value>0</value>
+			</binding>
+		</item>
+	</checklist>
+</PropertyList>

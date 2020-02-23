@@ -14,6 +14,22 @@
 		<object-name>yoke.L</object-name>
 		<object-name>yoke.R</object-name>
 	</effect>
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/fuselage</inherits-from>
+		<object-name>fuselage</object-name>
+		<object-name>vstab</object-name>
+		<object-name>rudder</object-name>
+		<object-name>aileron.L</object-name>
+		<object-name>aileron.R</object-name>
+		<object-name>flap.L</object-name>
+		<object-name>flap.R</object-name>
+		<object-name>door.L</object-name>
+		<object-name>window.frame.L</object-name>
+		<object-name>door.R</object-name>
+		<object-name>window.frame.R</object-name>
+		<object-name>gear.L</object-name>
+		<object-name>gear.R</object-name>
+	</effect>
 	
 	<!-- Include Lights -->
 	<!-- The Cessna 140 is equipped with the following:
@@ -297,6 +313,37 @@
 			</binding>
 		</action>
 	</animation>
+	<!-- based on c172p -->
+	<animation>
+		<type>pick</type>
+		<object-name>primer.lever</object-name>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>c140.pumpPrimer();</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>primer</tooltip-id>
+				<label>Engine primer (%1d)</label>
+				<property>controls/engines/engine/primer</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>primer.lever</object-name>
+		<property>/controls/engines/engine/primer-animation</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 	<animation>
 		<type>slider</type>
 		<drag-direction>vertical</drag-direction>
@@ -314,13 +361,25 @@
 				<property>controls/engines/engine[0]/carburetor-heat</property>
 				<min>0.0</min>
 				<max>1.0</max>
-				<factor>0.05</factor>
+				<factor>-0.05</factor>
 			</binding>
 		</action>
 	</animation>
 	<animation>
-		<type>slider</type>
-		<drag-direction>vertical</drag-direction>
+		<type>pick</type>
+		<object-name>parkbrake.lever</object-name>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/gear/brake-parking</property>
+				<value>1.0</value>
+				<value>0.0</value>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
 		<object-name>parkbrake.lever</object-name>
 		<property>controls/gear/brake-parking</property>
 		<factor>0.04</factor>
@@ -329,15 +388,6 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<action>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/gear/brake-parking</property>
-				<min>0.0</min>
-				<max>1.0</max>
-				<factor>0.05</factor>
-			</binding>
-		</action>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -356,7 +406,7 @@
 				<property>controls/cabin/cabin-heat-lever</property>
 				<min>0.0</min>
 				<max>1.0</max>
-				<factor>0.05</factor>
+				<factor>-0.05</factor>
 			</binding>
 		</action>
 	</animation>
@@ -425,6 +475,15 @@
 		<object-name>yoke.R</object-name>
 		<property>/controls/flight/elevator</property>
 		<factor>-0.15</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+	<!-- Engine -->
+	<animation>
+		<type>spin</type>
+		<object-name>spinner</object-name>
+		<property>engines/engine[0]/rpm</property>
 		<axis>
 			<x>1</x>
 		</axis>

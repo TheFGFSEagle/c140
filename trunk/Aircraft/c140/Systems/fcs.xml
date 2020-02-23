@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<system name="Conventional Controls">
+<system name="C140: FCS">
 	<channel name="Pitch">
 		<summer name="Pitch Trim Sum">
 			<input>fcs/elevator-cmd-norm</input>
@@ -158,6 +158,34 @@
 			</range>
 			<output>fcs/flap-pos-norm</output>
 		</aerosurface_scale>
+	</channel>
+	<channel name="Engine Control">
+		<actuator name="Primer lever animation">
+			<input>/controls/engines/engine[0]/primer-lever</input>
+			<rate_limit>1.2</rate_limit>
+			<output>/controls/engines/engine[0]/primer-animation</output>
+		</actuator>
+		<actuator name="Fuel selector animation">
+			<input>/controls/fuel/tank-selector</input>
+			<rate_limit>5</rate_limit>
+			<output>/controls/fuel/tank-selector-animation</output>
+		</actuator>
+		<switch>
+			<default value="0"/>
+			<test value="1">
+				/controls/fuel/tank-selector eq 2
+			</test>
+			<output>/consumables/fuel/tank[0]/selected</output>
+			<output>propulsion/tank[0]/priority</output>
+		</switch>
+		<switch>
+			<default value="0"/>
+			<test value="1">
+				/controls/fuel/tank-selector eq 1
+			</test>
+			<output>/consumables/fuel/tank[1]/selected</output>
+			<output>propulsion/tank[1]/priority</output>
+		</switch>
 	</channel>
 	
 </system>

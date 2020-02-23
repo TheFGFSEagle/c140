@@ -125,8 +125,7 @@
 				<roll>     0.00 </roll>
 				<yaw>     0.00 </yaw>
 			</orient>
-			<feed> 0 </feed>
-			
+			<feed> 2 </feed> <!-- fed by fuel strainer -->
 			<thruster file="Sensenich_72in">
 				<sense> 1 </sense>
 				<location unit="M">
@@ -151,6 +150,7 @@
 			</location>
 			<capacity unit="LBS"> 75.25 </capacity>
 			<contents unit="LBS"> 35.00 </contents>
+			<type>AVGAS</type>
 		</tank>
 		<tank type="FUEL" number="1">
 			<location unit="M">
@@ -160,6 +160,19 @@
 			</location>
 			<capacity unit="LBS"> 75.25 </capacity>
 			<contents unit="LBS"> 35.00 </contents>
+			<type>AVGAS</type>
+		</tank>
+		<!-- Fuel Strainer -->
+		<tank type="FUEL">
+			<location unit="IN">
+				<x> 56 </x>
+				<y> 0 </y>
+				<z> 59.4 </z>
+			</location>
+			<capacity unit="LBS">0.1</capacity>
+			<contents unit="LBS">0.0</contents>
+			<priority>1</priority>
+			<type>AVGAS</type>
 		</tank>
 		
 	</propulsion>
@@ -253,6 +266,8 @@
 	</ground_reactions>
 	
 	<system file="fcs.xml"/>
+	<system file="fuel.xml"/>
+	<system file="engine.xml"/>
 	
 	<flight_control name="FCS: Cessna140">
 		
@@ -364,7 +379,7 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					<value> 0.0202 </value>
+					<value> 0.020 </value>
 				</product>
 			</function>
 			

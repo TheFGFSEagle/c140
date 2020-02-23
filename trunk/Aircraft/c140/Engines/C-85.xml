@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 	<!-- Reference
 		[1]	Instruction and Service Manual	https://www.manualslib.com/download/1014632/Continental-Motors-C75.html
+		[2]	Operation Manual 	https://ad7zj.net/wiki/images/1/19/Operation_Manual_for_Cessna_120_140.pdf
 	-->
 <piston_engine name="C-85">
 	<minmp unit="INHG">         10.0 </minmp>
@@ -8,18 +9,26 @@
 	<displacement unit="IN3"> 188 </displacement>
 	<maxhp>        85 </maxhp>
 	<cycles>         4.0 </cycles>
-	<idlerpm>      700.0 </idlerpm>
-	<maxrpm>      2800.0 </maxrpm>
+	<idlerpm>      510.0 </idlerpm>
+	<maxrpm>      2650.0 </maxrpm> <!-- 2575 -->
 	<sparkfaildrop>  0.1 </sparkfaildrop>
 	<volumetric-efficiency> 0.85 </volumetric-efficiency>
 	<man-press-lag> 0.1 </man-press-lag>
 	<static-friction  unit="HP"> 0.425 </static-friction>
 	<starter-torque> 68 </starter-torque>
 	<starter-rpm> 1400 </starter-rpm>
-	<!-- Defining <bsfc> over-rides the built-in horsepower calculations -->
-	<!--<bsfc>           0.45 </bsfc>-->
-	<stroke unit="IN">  3.625 </stroke>
-	<bore unit="IN">    4.0625 </bore>
-	<cylinders>         4 </cylinders>
-	<compression-ratio>  6.5 </compression-ratio>
+	<!-- 	Ref. 1 - Figure 4:
+			4gph=24.80pph at 2050 RPM, 38.73 hp 
+				=> 0.64 lbs/hp*hr
+		Ref. 2 - Page 12:
+			2400 RPM (70hp): 4.8gph=29.76pph	(103.2mph)
+				=> 0.425 lbs/hp*hr
+			2100 RPM (hp): 4.0gph=24.80pph		(86.8mph)
+				=> 0.587 lbs/hp*hr
+	-->
+	<bsfc unit="LBS/HP*HR">	0.55 	</bsfc>
+	<stroke unit="IN">  	3.625 	</stroke>
+	<bore unit="IN">    	4.0625 	</bore>
+	<cylinders>         	4 	</cylinders>
+	<compression-ratio>  	6.5 	</compression-ratio>
 </piston_engine>
