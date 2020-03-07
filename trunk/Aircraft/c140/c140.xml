@@ -294,6 +294,7 @@
 	<system file="fcs.xml"/>
 	<system file="fuel.xml"/>
 	<system file="engine.xml"/>
+	<system file="sound.xml"/>
 	
 	<flight_control name="FCS: Cessna140">
 		
@@ -755,7 +756,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value> -0.0998 </value>
+					<value> -0.15 </value>
 				</product>
 			</function>
 			
