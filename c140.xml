@@ -6,52 +6,11 @@
 	    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	
 	<fileheader>
-		<author> Aeromatic v 3.3.10 </author>
+		<author>Benedikt Wolf (D-ECHO) </author>
 		<filecreationdate> 16 Feb 2020 </filecreationdate>
 		<version>$Revision: 1.80 $</version>
 		<description> Models a Cessna140. </description>
 	</fileheader>
-	
-	<!--
-	File:     Cessna140.xml
-	Inputs:
-	name:          Cessna140
-	type:          Single engine Glider, Small Commuter
-	stall speed:   42.58kts
-	max weight:    1450.00 lb
-	length:        21.50 ft
-	wing: 
-	span:         33.33 ft
-	area:         159.30 sq-ft
-	mean chord:   5.05 ft
-	aspect ratio: 6.97:1
-	taper ratio:  1.00:1
-	incidence:    1.00 degrees
-	dihedral:     1.00 degrees
-	sweep:        0.00 degrees
-	
-	no. engines:   1
-	engine type:   Piston Engine
-	engine layout: forward fuselage
-	
-	gear type:     taildragger
-	steering type: steering
-	retractable?:  no
-	
-	Outputs:
-	wing loading:       9.10 lb/sq-ft
-	- thickness ratio: 11.30%
-	payload:            345.40 lbs
-	CL-alpha:           5.13 per radian
-	CL-0:               0.31
-	CL-max:             1.48
-	CD-0:               0.02
-	K:                  0.04
-	Mcrit:              0.70
-	
-	min. turn radius    88.62 ft
-	max. turn rate:     0.89 deg/s
-	-->
 	
 	<!-- Reference:
 		[1]	Operation Manual 	https://ad7zj.net/wiki/images/1/19/Operation_Manual_for_Cessna_120_140.pdf
@@ -62,10 +21,10 @@
 		<wingspan  unit="FT" >    33.33 </wingspan>
 		<wing_incidence unit="DEG"> 1.00 </wing_incidence>
 		<chord     unit="FT" >     5.05 </chord>
-		<htailarea unit="FT2">    26.87 </htailarea>
-		<htailarm  unit="FT" >    13.80 </htailarm>
-		<vtailarea  unit="FT2">   26.90 </vtailarea>
-		<vtailarm  unit="FT" >    14.00 </vtailarm>
+		<htailarea unit="FT2">    26.87 </htailarea><!--
+		<htailarm  unit="FT" >    13.80 </htailarm>-->
+		<vtailarea  unit="FT2">   26.90 </vtailarea><!--
+		<vtailarm  unit="FT" >    14.00 </vtailarm>-->
 		<location name="AERORP" unit="M">
 			<!-- [1] says that the CoG maximal aft value is 17.7inch behind leading edge: -1.473m; aeroRP *always* has to be behind CoG -->
 			<x>  -1.48 </x>
@@ -92,7 +51,7 @@
 		<location name="CG" unit="M">
 			<x> -1.58 </x>
 			<y>  0.00 </y>
-			<z>  -0.30 </z>
+			<z>  -0.40 </z>
 		</location>
 		<pointmass name="Pilot">
 			<weight unit="KG"> 80 </weight>
@@ -185,14 +144,81 @@
 				<y>     0.00 </y>
 				<z>  -0.298413 </z>
 			</location>
-			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
+			<static_friction>  0.50 </static_friction>
+			<dynamic_friction> 0.40 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<spring_coeff  unit="LBS/FT">     700.00 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 300.00 </damping_coeff>
 			<max_steer unit="DEG"> 66.00 </max_steer>
 			<brake_group> NONE </brake_group>
 			<retractable> 0 </retractable>
+			<table name="CORNERING_COEFF" type="internal">
+				<!-- output from https://gitlab.com/mdanil/aircraft-model-tools/blob/master/jsbsim-pacejka.py -->
+				<!-- parameters:  3.0 0.06 2.8 0.70 1.03 0.70 (example values from the script, only changed static_friction to 0.70)-->
+				<tableData>
+					-90.0   -0.576039583617
+					-87.0   -0.576875620452
+					-84.0   -0.578095860637
+					-81.0   -0.579741128912
+					-78.0   -0.581858226257
+					-75.0   -0.5845010317
+					-72.0   -0.587731845567
+					-69.0   -0.59162303394
+					-66.0   -0.596259049643
+					-63.0   -0.601738924036
+					-60.0   -0.608179346329
+					-57.0   -0.615718471683
+					-54.0   -0.624520622039
+					-51.0   -0.634782054267
+					-48.0   -0.646737945327
+					-45.0   -0.660670631169                                                                                                                                                                                                          
+					-42.0   -0.676918820464                                                                                                                                                                                                          
+					-39.0   -0.695886735076                                                                                                                                                                                                          
+					-36.0   -0.718050357194                                                                                                                                                                                                          
+					-33.0   -0.743953974251                                                                                                                                                                                                          
+					-30.0   -0.774181304343                                                                                                                                                                                                          
+					-27.0   -0.809265615745                                                                                                                                                                                                          
+					-24.0   -0.849459047781                                                                                                                                                                                                          
+					-21.0   -0.894184360525                                                                                                                                                                                                          
+					-18.0   -0.940789296444                                                                                                                                                                                                          
+					-15.0   -0.981853243446                                                                                                                                                                                                          
+					-12.0   -0.999894931794                                                                                                                                                                                                          
+					-9.0    -0.95922919688                                                                                                                                                                                                           
+					-6.0    -0.801921037963                                                                                                                                                                                                          
+					-3.0    -0.473562365448                                                                                                                                                                                                          
+					0.0     0.0                                                                                                                                                                                                                      
+					3.0     0.473562365448                                                                                                                                                                                                           
+					6.0     0.801921037963                                                                                                                                                                                                           
+					9.0     0.95922919688                                                                                                                                                                                                            
+					12.0    0.999894931794                                                                                                                                                                                                           
+					15.0    0.981853243446                                                                                                                                                                                                           
+					18.0    0.940789296444                                                                                                                                                                                                           
+					21.0    0.894184360525                                                                                                                                                                                                           
+					24.0    0.849459047781                                                                                                                                                                                                           
+					27.0    0.809265615745                                                                                                                                                                                                           
+					30.0    0.774181304343                                                                                                                                                                                                           
+					33.0    0.743953974251                                                                                                                                                                                                           
+					36.0    0.718050357194                                                                                                                                                                                                           
+					39.0    0.695886735076                                                                                                                                                                                                           
+					42.0    0.676918820464                                                                                                                                                                                                           
+					45.0    0.660670631169                                                                                                                                                                                                           
+					48.0    0.646737945327
+					51.0    0.634782054267
+					54.0    0.624520622039
+					57.0    0.615718471683
+					60.0    0.608179346329
+					63.0    0.601738924036
+					66.0    0.596259049643
+					69.0    0.59162303394
+					72.0    0.587731845567
+					75.0    0.5845010317
+					78.0    0.581858226257
+					81.0    0.579741128912
+					84.0    0.578095860637
+					87.0    0.576875620452
+					90.0    0.576039583617
+				</tableData>
+			</table>
 		</contact>
 		
 		<contact type="BOGEY" name="LEFT_MAIN">
@@ -204,7 +230,7 @@
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
-			<spring_coeff  unit="LBS/FT">     1450.00 </spring_coeff>
+			<spring_coeff  unit="LBS/FT">     1800.00 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 725.00 </damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group> LEFT </brake_group>
@@ -220,7 +246,7 @@
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
-			<spring_coeff  unit="LBS/FT">     1450.00 </spring_coeff>
+			<spring_coeff  unit="LBS/FT">     1800.00 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 725.00 </damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group> RIGHT </brake_group>
@@ -236,7 +262,7 @@
 			<static_friction>  1 </static_friction>
 			<dynamic_friction> 1 </dynamic_friction>
 			<spring_coeff unit="LBS/FT">      1450.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1450.00 </damping_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 900.00 </damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="LEFT_WING">
@@ -248,7 +274,7 @@
 			<static_friction>  1 </static_friction>
 			<dynamic_friction> 1 </dynamic_friction>
 			<spring_coeff unit="LBS/FT">      1450.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1450.00 </damping_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 900.00 </damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="RIGHT_WING">
@@ -260,7 +286,7 @@
 			<static_friction>  1 </static_friction>
 			<dynamic_friction> 1 </dynamic_friction>
 			<spring_coeff unit="LBS/FT">      1450.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1450.00 </damping_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 900.00 </damping_coeff>
 		</contact>
 		
 	</ground_reactions>
@@ -687,8 +713,14 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
-					<property>aero/beta-rad</property>
-					<value> 0.1570 </value>
+					<table>
+						<independentVar lookup="row">aero/beta-rad</independentVar>
+						<tableData>
+							-0.349 -0.01
+							0.000  0.00
+							0.349  0.01
+						</tableData>
+					</table>
 				</product>
 			</function>
 			

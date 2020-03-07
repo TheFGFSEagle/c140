@@ -18,12 +18,20 @@
 				<z-offset-m type="double">-1.2</z-offset-m>
 			</config>
 		</view>
+		<sound>
+			<path>Sounds/c140-sound.xml</path>
+		</sound>
 		<systems>
 			<electrical>
 				<path></path> <!-- Disable generic XML electrical system -->
 			</electrical>
 		</systems>
 	</sim>
+	<c140>
+		<sound>
+			<click type="bool">0</click>
+		</sound>
+	</c140>
 	<consumables>
 		<fuel>
 			<tank n="0">

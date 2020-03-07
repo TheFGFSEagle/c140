@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+	<fx>
+		<switch>
+			<name>click-switch</name>
+			<mode>once</mode>
+			<path>Sounds/click.wav</path>
+			<condition>
+				<property>c140/sound/click</property>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.2</reference-dist>
+			<max-dist>5.0</max-dist>
+		</switch>
+		<switch>
+			<name>click-switch-off</name>
+			<mode>once</mode>
+			<path>Sounds/click.wav</path>
+			<condition>
+				<not>
+					<property>c140/sound/click</property>
+				</not>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.2</reference-dist>
+			<max-dist>5.0</max-dist>
+		</switch>
+	</fx>
+</PropertyList>
