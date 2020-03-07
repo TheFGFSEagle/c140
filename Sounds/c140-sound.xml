@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <PropertyList>
+	<!-- the sounds in this aircraft are currently from the J3Cub by wlbragg et.al; Engine_Continental-O200A.wav is from the c150 by Harald Johnsen et.al. 
+	thank you very much to them!-->
 	<fx>
 		<switch>
 			<name>click-switch</name>
@@ -33,5 +35,208 @@
 			<reference-dist>0.2</reference-dist>
 			<max-dist>5.0</max-dist>
 		</switch>
+		<!-- Levers -->
+		<!-- Throttle Lever -->
+		<lever>
+			<name>throtle</name>
+			<mode>in-transit</mode>
+			<path>lever.wav</path>
+			<property>controls/engines/engine[0]/throttle</property><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.2</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<!-- All other Levers -->
+		<lever>
+			<name>mixture</name>
+			<mode>in-transit</mode>
+			<path>primer-out.wav</path>
+			<property>controls/engines/engine[0]/mixture</property><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>lever_out1</name>
+			<mode>once</mode>
+			<path>primer-out.wav</path>
+			<condition>
+				<or>
+					<property>controls/engines/engine/primer-lever</property>
+				</or>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>lever_in1</name>
+			<mode>once</mode>
+			<path>primer-in.wav</path>
+			<condition>
+					<or>
+						<not>
+							<property>controls/engines/engine/primer-lever</property>
+						</not>
+					</or>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>lever_out2</name>
+			<mode>once</mode>
+			<path>primer-out.wav</path>
+			<condition>
+				<or>
+					<property>controls/switches/starter</property>
+				</or>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>lever_in2</name>
+			<mode>once</mode>
+			<path>primer-in.wav</path>
+			<condition>
+					<or>
+						<not>
+							<property>controls/switches/starter</property>
+						</not>
+					</or>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>lever_out3</name>
+			<mode>once</mode>
+			<path>primer-out.wav</path>
+			<condition>
+				<or>
+					<property>controls/gear/brake-parking</property>
+				</or>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>lever_in3</name>
+			<mode>once</mode>
+			<path>primer-in.wav</path>
+			<condition>
+					<or>
+						<not>
+							<property>controls/gear/brake-parking</property>
+						</not>
+					</or>
+			</condition><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>carbheat</name>
+			<mode>in-transit</mode>
+			<path>primer-out.wav</path>
+			<property>controls/engines/engine[0]/carburetor-heat</property><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<lever>
+			<name>cabinheat</name>
+			<mode>in-transit</mode>
+			<path>primer-out.wav</path>
+			<property>controls/cabin/cabin-heat-lever</property><!--
+			<position>
+				<x></x>
+				<y></y>
+				<z></z>
+			</position>-->
+			<reference-dist>0.1</reference-dist>
+			<max-dist>5.0</max-dist>
+		</lever>
+		<!-- Engine -->
+		<!-- Idle sound -->
+		<engine>
+			<name>Engine Idle</name>
+			<mode>looped</mode>
+			<path>idleing.wav</path>
+			<property>engines/engine/running</property>
+			<volume>
+				<property>c140/sound/idle-volume</property>
+			</volume>
+			<pitch>
+				<property>c140/sound/idle-pitch</property>
+			</pitch>
+			<reference-dist>3.0</reference-dist>
+			<max-dist>15.0</max-dist>
+		</engine>
+		<!-- engine sound -->
+		<engine>
+			<name>Engine</name>
+			<mode>looped</mode>
+			<path>Engine_Continental-O200A.wav</path>
+			<property>engines/engine/running</property>
+			<volume>
+				<property>c140/sound/eng-volume</property>
+			</volume>
+			<pitch>
+				<property>c140/sound/eng-pitch</property>
+			</pitch>
+			<reference-dist>3.0</reference-dist>
+			<max-dist>15.0</max-dist>
+		</engine>
+		<!-- Starter sound -->
+		<engine>
+			<name>Engine Starter</name>
+			<mode>looped</mode>
+			<path>engstart.wav</path>
+			<property>engines/engine/starter</property>
+			<reference-dist>3.0</reference-dist>
+			<max-dist>15.0</max-dist>
+		</engine>
 	</fx>
 </PropertyList>
