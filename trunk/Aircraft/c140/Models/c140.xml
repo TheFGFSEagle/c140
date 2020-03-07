@@ -202,6 +202,10 @@
 				<command>property-toggle</command>
 				<property>controls/switches/master</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>c140/sound/click</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -222,6 +226,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/switches/turn-coordinator</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>c140/sound/click</property>
 			</binding>
 		</action>
 	</animation>
@@ -244,6 +252,10 @@
 				<command>property-toggle</command>
 				<property>controls/switches/nav-lights</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>c140/sound/click</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -264,6 +276,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/switches/landing-lights</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>c140/sound/click</property>
 			</binding>
 		</action>
 	</animation>

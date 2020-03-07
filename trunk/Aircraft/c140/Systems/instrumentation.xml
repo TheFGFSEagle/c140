@@ -97,6 +97,11 @@
 		<name>nav</name>
 		<number>0</number>
 	</nav-radio>
+
+	<slip-skid-ball>
+		<name>slip-skid-ball</name>
+		<number>0</number>
+	</slip-skid-ball>
 	
 	<turn-indicator>
 		<name>turn-indicator</name>

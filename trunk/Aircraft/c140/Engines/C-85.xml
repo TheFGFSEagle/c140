@@ -25,8 +25,8 @@
 				=> 0.425 lbs/hp*hr
 			2100 RPM (hp): 4.0gph=24.80pph		(86.8mph)
 				=> 0.587 lbs/hp*hr
-	-->
-	<bsfc unit="LBS/HP*HR">	0.55 	</bsfc>
+	--><!--
+	<bsfc unit="LBS/HP*HR">	0.55 	</bsfc>-->
 	<stroke unit="IN">  	3.625 	</stroke>
 	<bore unit="IN">    	4.0625 	</bore>
 	<cylinders>         	4 	</cylinders>
