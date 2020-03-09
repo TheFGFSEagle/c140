@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- based on this photo: https://images.fineartamerica.com/images-medium-large/cessna-140-nc2574n-cactus-fly-in-march-2-2012-brian-lockett.jpg -->
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">NC2574N</name>
+				<texture>c140.png</texture>
+				<reflection-correction>-0.325</reflection-correction>
+				<ambient-correction>0.15</ambient-correction>
+				<fresnel>0.1</fresnel>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>

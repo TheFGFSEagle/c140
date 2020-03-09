@@ -31,6 +31,27 @@
 		<object-name>gear.R</object-name>
 	</effect>
 	
+	<!-- Liveries -->
+	<animation>
+		<type>material</type>
+		<object-name>fuselage</object-name>
+		<object-name>vstab</object-name>
+		<object-name>rudder</object-name>
+		<object-name>aileron.L</object-name>
+		<object-name>aileron.R</object-name>
+		<object-name>flap.L</object-name>
+		<object-name>flap.R</object-name>
+		<object-name>door.L</object-name>
+		<object-name>window.frame.L</object-name>
+		<object-name>door.R</object-name>
+		<object-name>window.frame.R</object-name>
+		<object-name>gear.L</object-name>
+		<object-name>gear.R</object-name>
+		<property-base>sim/model/livery</property-base> 
+		<texture-prop>texture</texture-prop> 
+		<texture>c140.png</texture>
+	</animation>
+	
 	<!-- Include Lights -->
 	<!-- The Cessna 140 is equipped with the following:
 		*Navigation lights (Wings+Rudder)

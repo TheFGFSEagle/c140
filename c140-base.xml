@@ -2,8 +2,27 @@
 <PropertyList>
 	<sim>
 		<checklists include="c140-checklists.xml"/>
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>Cessna 140</label>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
 		<model>
 			<path>Models/c140.xml</path>
+			<livery>
+				<reflection-correction type="double">-0.7</reflection-correction>
+				<ambient-correction type="double">0.15</ambient-correction>
+				<fresnel type="double">0.2</fresnel>
+			</livery>
 		</model>
 		<instrumentation>
 			<path>Systems/instrumentation.xml</path>
@@ -92,6 +111,7 @@
 			<file>Aircraft/Generic/updateloop.nas</file>
 		</updateloop>
 		<c140>
+			<file>Nasal/c140.nas</file>
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/engine.nas</file>
 			<file>Nasal/kx165a.nas</file>

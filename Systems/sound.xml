@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<system name="C140: Sound">
+	<channel name="Engine">
+		<fcs_function name="/c140/sound/idle-volume">
+			<function>
+				<table>
+					<independentVar lookup="row">/engines/engine[0]/rpm</independentVar>
+					<tableData>
+						300	0.3
+						500	1.0
+						1400	0.0
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		<fcs_function name="/c140/sound/idle-pitch">
+			<function>
+				<table>
+					<independentVar lookup="row">/engines/engine[0]/rpm</independentVar>
+					<tableData>
+						500	0.0
+						1200	0.3
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		<fcs_function name="/c140/sound/eng-volume">
+			<function>
+				<table>
+					<independentVar lookup="row">/engines/engine[0]/rpm</independentVar>
+					<tableData>
+						0	0.0
+						500	0.3
+						2800	1.0
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		<fcs_function name="/c140/sound/eng-pitch">
+			<function>
+				<table>
+					<independentVar lookup="row">/engines/engine[0]/rpm</independentVar>
+					<tableData>
+						300	0.0
+						2800	0.6
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+	</channel>	
+</system>
