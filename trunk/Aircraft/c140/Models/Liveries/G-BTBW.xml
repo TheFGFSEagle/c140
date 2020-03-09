@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- based on this photo: https://upload.wikimedia.org/wikipedia/commons/a/a7/Cessna.120.g-btbw.arp.jpg -->
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">G-BTBW</name>
+				<texture>Liveries/G-BTBW.png</texture>
+				<reflection-correction>-0.95</reflection-correction>
+				<ambient-correction>0.15</ambient-correction>
+				<fresnel>0.1</fresnel>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>
