@@ -7,6 +7,7 @@
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>glass</object-name>
+		<object-name>glass.taillight</object-name>
 	</effect>
 	<effect>
 		<inherits-from>Aircraft/c140/Models/Effects/panel-reflection</inherits-from>
@@ -619,6 +620,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rudder</object-name>
+		<object-name>glass.taillight</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
 		<factor>16</factor>
 		<axis>
