@@ -6,7 +6,7 @@
 			<livery>
 				<name type="string">NC2574N</name>
 				<texture>c140.png</texture>
-				<reflection-correction>-0.325</reflection-correction>
+				<reflection-correction>-0.28</reflection-correction>
 				<ambient-correction>0.15</ambient-correction>
 				<fresnel>0.1</fresnel>
 			</livery>
