@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-
+<!-- ported from C150 by Harald Johnsen et.al, thanks! -->
 <PropertyList>
 	
 	<path>tc.ac</path>
@@ -26,7 +26,7 @@
 	</animation>
 	
 	<effect>
-		<inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+		<inherits-from>Aircraft/c140/Models/Effects/interior/flashlight</inherits-from>
 		<object-name>Ball</object-name>
 		<object-name>Face</object-name>
 		<object-name>Airplane</object-name>
