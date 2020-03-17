@@ -7,7 +7,7 @@
 		<normalmap-dds type="int"> 0 </normalmap-dds>
 		<normalmap-tiling type="float"> 1.0 </normalmap-tiling>
 		<texture n="2">
-			<image>Aircraft/c140/Models/Effects/normals.png</image>
+			<image>Aircraft/c140/Models/Effects/exterior/normals.png</image>
 			<filter>linear-mipmap-linear</filter>
 			<wrap-s>repeat</wrap-s>
 			<wrap-t>repeat</wrap-t>
@@ -24,7 +24,7 @@
 		<reflection-dynamic type="int">1</reflection-dynamic>
 		<ambient-correction type="float"><use>/sim/model/livery/ambient-correction</use></ambient-correction>
 		<texture n="4">
-			<image>Aircraft/c140/Models/Effects/greymap.png</image>
+			<image>Aircraft/c140/Models/Effects/exterior/greymap.png</image>
 			<filter>linear-mipmap-linear</filter>
 			<wrap-s>clamp</wrap-s>
 			<wrap-t>clamp</wrap-t>
