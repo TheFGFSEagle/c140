@@ -77,6 +77,7 @@
 				<primer type="int">0</primer>
 				<primer-lever type="double">0.0</primer-lever>
 				<primer-animation type="double">0.0</primer-animation>
+				<use-primer type="bool">false</use-primer>
 				<carburetor-heat type="double">0.0</carburetor-heat>
 			</engine>
 		</engines>
