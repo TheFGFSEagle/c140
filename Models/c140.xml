@@ -484,8 +484,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>yoke.L</object-name>
-		<property>/controls/flight/aileron</property>
-		<factor>-30</factor>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-70</factor>
 		<axis>
 			<x>1</x>
 		</axis>
@@ -497,8 +497,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>yoke.R</object-name>
-		<property>/controls/flight/aileron</property>
-		<factor>-30</factor>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-70</factor>
 		<axis>
 			<x>1</x>
 		</axis>
@@ -511,8 +511,8 @@
 		<type>translate</type>
 		<object-name>yoke.L</object-name>
 		<object-name>yoke.R</object-name>
-		<property>/controls/flight/elevator</property>
-		<factor>-0.15</factor>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>-0.12</factor>
 		<axis>
 			<x>1</x>
 		</axis>
@@ -531,7 +531,7 @@
 		<type>rotate</type>
 		<object-name>gear.L</object-name>
 		<object-name>wheel.L</object-name>
-		<property>gear/gear[1]/compression-ft</property>
+		<property>gear/gear[1]/compression-norm</property>
 		<offset-deg>5</offset-deg>
 		<factor>-27</factor>
 		<axis>
@@ -546,7 +546,7 @@
 		<type>rotate</type>
 		<object-name>gear.R</object-name>
 		<object-name>wheel.R</object-name>
-		<property>gear/gear[2]/compression-ft</property>
+		<property>gear/gear[2]/compression-norm</property>
 		<offset-deg>-5</offset-deg>
 		<factor>27</factor>
 		<axis>
