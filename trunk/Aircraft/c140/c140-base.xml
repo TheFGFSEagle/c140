@@ -35,6 +35,8 @@
 				<x-offset-m type="double">-0.257</x-offset-m>
 				<y-offset-m type="double"> 0.4  </y-offset-m>
 				<z-offset-m type="double">-1.2  </z-offset-m>
+				<default-field-of-view-deg type="double"> 70.0</default-field-of-view-deg>
+				<pitch-offset-deg type="double">-8</pitch-offset-deg>
 			</config>
 		</view>
 		<view n="100">
@@ -42,9 +44,41 @@
 			<type>lookfrom</type>
 			<internal type="bool">true</internal>
 			<config>
-				<x-offset-m type="double">-0.257</x-offset-m>
-				<y-offset-m type="double">-0.4  </y-offset-m>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m type="double"> 0.257</x-offset-m>
+				<y-offset-m type="double"> 0.4  </y-offset-m>
 				<z-offset-m type="double">-1.2  </z-offset-m>
+				<default-field-of-view-deg type="double"> 70.0</default-field-of-view-deg>
+				<pitch-offset-deg type="double">-8</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Tail Camera View</name>
+			<type>lookfrom</type>
+			<internal type="bool">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m type="double"> 0.0  </x-offset-m>
+				<y-offset-m type="double"> 1.37 </y-offset-m>
+				<z-offset-m type="double"> 2.59 </z-offset-m>
+				<default-field-of-view-deg type="double"> 100.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Left Wing Camera View</name>
+			<type>lookfrom</type>
+			<internal type="bool">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m type="double"> -2.14 </x-offset-m>
+				<y-offset-m type="double">  0.415 </y-offset-m>
+				<z-offset-m type="double"> -1.17 </z-offset-m>
+				<default-field-of-view-deg type="double"> 103.0</default-field-of-view-deg>
+				<heading-offset-deg type="double">326</heading-offset-deg>
+				<pitch-offset-deg type="double">-20</pitch-offset-deg>
 			</config>
 		</view>
 		<sound>
