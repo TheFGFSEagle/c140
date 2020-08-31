@@ -8,6 +8,7 @@
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>glass</object-name>
 		<object-name>glass.taillight</object-name>
+		<object-name>glass.navlights</object-name>
 	</effect>
 	<effect>
 		<inherits-from>Aircraft/c140/Models/Effects/interior/panel-reflection</inherits-from>
@@ -30,6 +31,35 @@
 		<object-name>window.frame.R</object-name>
 		<object-name>gear.L</object-name>
 		<object-name>gear.R</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/interior/interior</inherits-from>
+		<object-name>interior</object-name>
+		<object-name>floor</object-name>
+		<object-name>pedal.left.0</object-name>
+		<object-name>pedal.left.1</object-name>
+		<object-name>pedal.right.0</object-name>
+		<object-name>pedal.right.1</object-name>
+		<object-name>tube</object-name>
+		<object-name>door.L.int</object-name>
+		<object-name>door.R.int</object-name>
+		<object-name>window.frame.L.int</object-name>
+		<object-name>window.frame.R.int</object-name>
+		<!--	Instrument Panel	-->
+		<object-name>panel</object-name>
+		<!--	Switches	-->
+		<object-name>master.switch</object-name>
+		<object-name>tb.switch</object-name>
+		<object-name>navlts.switch</object-name>
+		<object-name>ldglts.switch</object-name>
+		<!--	Levers	-->
+		<object-name>mixer.lever</object-name>
+		<object-name>primer.lever</object-name>
+		<object-name>carbheat.lever</object-name>
+		<object-name>parkbrake.lever</object-name>
+		<object-name>cabinheat.lever</object-name>
+		<object-name>starter.lever</object-name>
+		<object-name>throttle.lever</object-name>
 	</effect>
 	
 	<!-- Liveries -->
@@ -55,26 +85,29 @@
 	
 	<!-- Include Lights -->
 	<!-- The Cessna 140 is equipped with the following:
-		*Navigation lights (Wings+Rudder)
+		*Navigation lights ( Wings + Rudder )
 		*Landing lights (optional!)
 	-->
 	<model>
+		<name>red_navlight</name>
 		<path>Lights/red-navlight.xml</path>
 		<offsets>
-			<x-m>-1.33853</x-m>
-			<y-m>-5.04</y-m>
-			<z-m>0.734383</z-m>
+			<x-m> -1.336 </x-m>
+			<y-m> -5.075 </y-m>
+			<z-m>  0.737 </z-m>
 		</offsets>
 	</model>
 	<model>
+		<name>green_navlight</name>
 		<path>Lights/green-navlight.xml</path>
 		<offsets>
-			<x-m>-1.33853</x-m>
-			<y-m>5.04</y-m>
-			<z-m>0.734383</z-m>
+			<x-m> -1.336 </x-m>
+			<y-m>  5.075 </y-m>
+			<z-m>  0.737 </z-m>
 		</offsets>
 	</model>
 	<model>
+		<name>tail_navlight</name>
 		<path>Lights/tail-navlight.xml</path>
 		<offsets>
 			<x-m>3.381</x-m>
@@ -517,6 +550,28 @@
 			<x>1</x>
 		</axis>
 	</animation>
+	<!--	Rudder Pedals	-->
+	<animation>
+		<type>translate</type>
+		<object-name>pedal.left.0</object-name>
+		<object-name>pedal.right.0</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<axis>
+			<x>1</x>
+		</axis>
+		<factor>0.1</factor>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>pedal.left.1</object-name>
+		<object-name>pedal.right.1</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<axis>
+			<x>1</x>
+		</axis>
+		<factor>-0.1</factor>
+	</animation>
+	
 	<!-- Engine -->
 	<animation>
 		<type>spin</type>
@@ -621,6 +676,7 @@
 		<type>rotate</type>
 		<object-name>rudder</object-name>
 		<object-name>glass.taillight</object-name>
+		<object-name>tail_navlight</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
 		<factor>16</factor>
 		<axis>

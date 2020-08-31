@@ -71,7 +71,19 @@
         <object-name>Screen</object-name>
     </effect>-->
 	<effect>
-		<inherits-from>../../Effects/interior/interior-radiance</inherits-from>
+		<inherits-from>../../Effects/interior/interior</inherits-from>
+		<object-name>COMknobKHZ</object-name>
+		<object-name>COMknobMHZ</object-name>
+		<object-name>COMxfer</object-name>
+		<object-name>COMvol</object-name>
+		<object-name>COMchan</object-name>
+		<object-name>NAVknobKHZ</object-name>
+		<object-name>NAVknobMHZ</object-name>
+		<object-name>NAVxfer</object-name>
+		<object-name>NAVmode</object-name>
+		<object-name>NAVvol</object-name>
+		<object-name>KX165</object-name>
+		<object-name>Screen</object-name>
 		<object-name>CommStby100K</object-name>
 		<object-name>CommStby100M</object-name>
 		<object-name>CommStby10K</object-name>

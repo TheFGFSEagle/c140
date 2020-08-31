@@ -33,8 +33,18 @@
 			<internal type="bool">true</internal>
 			<config>
 				<x-offset-m type="double">-0.257</x-offset-m>
-				<y-offset-m type="double">0.4</y-offset-m>
-				<z-offset-m type="double">-1.2</z-offset-m>
+				<y-offset-m type="double"> 0.4  </y-offset-m>
+				<z-offset-m type="double">-1.2  </z-offset-m>
+			</config>
+		</view>
+		<view n="100">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<x-offset-m type="double">-0.257</x-offset-m>
+				<y-offset-m type="double">-0.4  </y-offset-m>
+				<z-offset-m type="double">-1.2  </z-offset-m>
 			</config>
 		</view>
 		<sound>

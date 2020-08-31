@@ -544,7 +544,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value> 0.2375 </value>
+					<value> 0.2 </value>
 				</product>
 			</function>
 			
@@ -700,7 +700,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value> 0.0100 </value>
+					<value> 0.0080 </value>
 				</product>
 			</function>
 			
@@ -756,7 +756,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value> -0.15 </value>
+					<value> -0.1 </value>
 				</product>
 			</function>
 			
