@@ -159,9 +159,11 @@
 			<file>Nasal/c140.nas</file>
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/engine.nas</file>
-			<file>Nasal/kx165a.nas</file>
 			<file>Nasal/clock.nas</file>
 		</c140>
+		<libraries>
+			<file>Nasal/kx165a.nas</file>
+		</libraries>
 	</nasal>
 	<refl-factor type="double">0.0</refl-factor>
 </PropertyList>
