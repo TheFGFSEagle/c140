@@ -3,6 +3,10 @@
 <PropertyList>
 	<path>c140.ac</path>
 	
+	<params>
+		<nav-light type="string">systems/electrical/outputs/nav-lights-norm</nav-light>
+	</params>
+	
 	<!-- Effects -->
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
@@ -91,29 +95,172 @@
 	<model>
 		<name>red_navlight</name>
 		<path>Lights/red-navlight.xml</path>
+		<overlay>
+			<params>
+				<light-property alias="/params/nav-light"/>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m> -1.336 </x-m>
 			<y-m> -5.075 </y-m>
 			<z-m>  0.737 </z-m>
 		</offsets>
 	</model>
+	<light>
+		<name>red-navlight</name>
+		<type>spot</type>
+		<position>
+			<x-m> -1.336 </x-m>
+			<y-m> -5.075 </y-m>
+			<z-m>  0.737 </z-m>
+		</position>
+		<direction>
+			<x>-0.25</x>
+			<y>-0.9 </y>
+			<z> 0.0 </z>
+		</direction>
+		<ambient>
+			<r>1.0</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1.0</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1.0</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.0</l>
+			<q>1.0</q>
+		</attenuation>
+		<spot-exponent>3</spot-exponent>
+		<spot-cutoff>70</spot-cutoff>
+		<range-m>5</range-m>
+		<dim-factor>
+			<property alias="/params/nav-light"/>
+		</dim-factor>
+	</light>
 	<model>
 		<name>green_navlight</name>
 		<path>Lights/green-navlight.xml</path>
+		<overlay>
+			<params>
+				<light-property alias="/params/nav-light"/>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m> -1.336 </x-m>
 			<y-m>  5.075 </y-m>
 			<z-m>  0.737 </z-m>
 		</offsets>
 	</model>
+	<light>
+		<name>green-navlight</name>
+		<type>spot</type>
+		<position>
+			<x-m> -1.336 </x-m>
+			<y-m>  5.075 </y-m>
+			<z-m>  0.737 </z-m>
+		</position>
+		<direction>
+			<x>-0.25</x>
+			<y> 0.9 </y>
+			<z> 0.0 </z>
+		</direction>
+		<ambient>
+			<r>0.1</r>
+			<g>1.0</g>
+			<b>0.1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.1</r>
+			<g>1.0</g>
+			<b>0.1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.1</r>
+			<g>1.0</g>
+			<b>0.1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.0</l>
+			<q>1.0</q>
+		</attenuation>
+		<spot-exponent>3</spot-exponent>
+		<spot-cutoff>70</spot-cutoff>
+		<range-m>5</range-m>
+		<dim-factor>
+			<property alias="/params/nav-light"/>
+		</dim-factor>
+	</light>
 	<model>
 		<name>tail_navlight</name>
 		<path>Lights/tail-navlight.xml</path>
+		<overlay>
+			<params>
+				<light-property alias="/params/nav-light"/>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>3.381</x-m>
 			<z-m>0.729</z-m>
 		</offsets>
 	</model>
+	<light>
+		<name>tail-navlight</name>
+		<type>spot</type>
+		<position>
+			<x-m>3.381</x-m>
+			<z-m>0.729</z-m>
+		</position>
+		<direction>
+			<x> 1.0 </x>
+			<y> 0.0 </y>
+			<z> 0.0 </z>
+		</direction>
+		<ambient>
+			<r>1.0</r>
+			<g>1.0</g>
+			<b>1.0</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1.0</r>
+			<g>1.0</g>
+			<b>1.0</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1.0</r>
+			<g>1.0</g>
+			<b>1.0</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.5</l>
+			<q>1.8</q>
+		</attenuation>
+		<spot-exponent>2</spot-exponent>
+		<spot-cutoff>70</spot-cutoff>
+		<range-m>5</range-m>
+		<dim-factor>
+			<property alias="/params/nav-light"/>
+		</dim-factor>
+	</light>
 	
 	<!-- INSTRUMENT PANEL -->
 	<!-- Instruments -->
