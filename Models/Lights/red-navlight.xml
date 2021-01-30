@@ -3,8 +3,24 @@
 
 	<path>red-navlight.ac</path>
 	<nopreview/>
+	<params>
+		<light-property type="string"/>
+	</params>
 	<effect>
-		<inherits-from>Aircraft/c140/Models/Lights/red-navlight</inherits-from>
+		<inherits-from>Aircraft/c140/Models/Lights/navlight</inherits-from>
+		<parameters>
+			<intensity_scale type="float">
+				<use alias="/params/light-property"/>
+			</intensity_scale>
+			<light_color_base_r type="float">0.5</light_color_base_r>
+			<light_color_base_g type="float">0.0</light_color_base_g>
+			<light_color_base_b type="float">0.0</light_color_base_b>
+			<light_color_center_r type="float">1.0</light_color_center_r>
+			<light_color_center_g type="float">0.7</light_color_center_g>
+			<light_color_center_b type="float">0.7</light_color_center_b>
+			<pointing_x type="float">1.0</pointing_x>
+			<pointing_y type="float">0.97629600712</pointing_y>
+		</parameters>
 		<object-name>red-navlight</object-name>
 	</effect>
 	<animation>
