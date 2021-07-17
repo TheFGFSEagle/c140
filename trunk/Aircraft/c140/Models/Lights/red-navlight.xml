@@ -47,6 +47,9 @@
 			</entry>
 		</interpolation>
 	</animation>
+	<animation>
+		<type>noshadow</type>
+	</animation>
 
 
 </PropertyList>
