@@ -8,6 +8,13 @@
 	</params>
 	
 	<!-- Effects -->
+	<animation>
+		<type>noshadow</type>
+		<object-name>glass</object-name>
+		<object-name>glass.taillight</object-name>
+		<object-name>glass.navlights</object-name>
+		<object-name>prop.disc</object-name>
+	</animation>
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>glass</object-name>
