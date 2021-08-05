@@ -13,20 +13,25 @@
 	</fileheader>
 	
 	<!-- Reference:
-		[1]	Operation Manual 	https://ad7zj.net/wiki/images/1/19/Operation_Manual_for_Cessna_120_140.pdf
+		[1]	Operation Manual 		https://ad7zj.net/wiki/images/1/19/Operation_Manual_for_Cessna_120_140.pdf
+		[2]	Type Certificate Data Sheet	https://rgl.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/2d3c513e9ce4433886257ed2006fb509/$FILE/A-768_Rev_35.pdf
+		[3]	AOPA Pilot Article		https://www.aopa.org/news-and-media/all-news/2011/october/pilot/budget-buy-drag-your-tail-cheaply
 	-->
 	
+	<!--	Coordinate Reference Note:		Wing leading edge = Datum:	 x = -1.92339 m =~ -75.724 in	-->
+	
 	<metrics>
-		<wingarea  unit="FT2">   159.30 </wingarea>
-		<wingspan  unit="FT" >    33.33 </wingspan>
-		<wing_incidence unit="DEG"> 1.00 </wing_incidence>
-		<chord     unit="FT" >     5.05 </chord>
-		<htailarea unit="FT2">    26.87 </htailarea><!--
-		<htailarm  unit="FT" >    13.80 </htailarm>-->
-		<vtailarea  unit="FT2">   26.90 </vtailarea><!--
-		<vtailarm  unit="FT" >    14.00 </vtailarm>-->
+		<!--	Ref. 3 SPECSHEET	-->
+		<wingarea  unit="FT2">   159 </wingarea>
+		<wingspan  unit="FT" >    32.67 </wingspan>
+		<wing_incidence unit="DEG"> 1.00 </wing_incidence> <!-- TODO Ref? -->
+		<chord     unit="FT" >     5.05 </chord> <!-- TODO Ref? -->
+		<htailarea unit="FT2">    26.87 </htailarea> <!-- TODO Ref? -->
+		<htailarm  unit="FT" >    13.80 </htailarm> <!-- TODO Ref? -->
+		<vtailarea  unit="FT2">   26.90 </vtailarea> <!-- TODO Ref? -->
+		<vtailarm  unit="FT" >    14.00 </vtailarm> <!-- TODO Ref? -->
 		<location name="AERORP" unit="M">
-			<!-- [1] says that the CoG maximal aft value is 17.7inch behind leading edge: -1.473m; aeroRP *always* has to be behind CoG -->
+			<!-- [1] says that the CoG maximal aft value is 17.7 in behind leading edge: -1.473m; aeroRP *always* has to be behind CoG -->
 			<x>  -1.48 </x>
 			<y>   0.00 </y>
 			<z>   0.63 </z>
@@ -43,15 +48,18 @@
 		</location>
 	</metrics>
 	
+	<!--	Ref. 1, p. 9: CoG Range: 13.5 in - 17.7 in behind leading edge
+					 x = -62.224 in - -58.024 in
+					 x = -1.58049 m - -1.47381 m	-->
 	<mass_balance>
 		<ixx unit="SLUG*FT2">    559.70 </ixx>
 		<iyy unit="SLUG*FT2">    413.96 </iyy>
 		<izz unit="SLUG*FT2">    916.22 </izz>
 		<emptywt unit="LBS" >    890.00 </emptywt>
 		<location name="CG" unit="M">
-			<x> -1.58 </x>
+			<x> -1.59 </x>	<!--	Ref. 1, p. 9: Use: between 12.2 in to 14.5 in, use 13.0 in, this means x = -1.92339 m + 0.3302 m = -1.59319 m	-->
 			<y>  0.00 </y>
-			<z>  -0.40 </z>
+			<z> -0.40 </z>
 		</location>
 		<pointmass name="Pilot">
 			<weight unit="KG"> 80 </weight>
