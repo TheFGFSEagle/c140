@@ -151,6 +151,22 @@
 			<channel-mode-selector type="int">0</channel-mode-selector>
 		</comm>
 	</instrumentation>
+	<payload>
+		<weight>
+			<name type="string">Pilot</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+			<arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[0]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">330.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Co-Pilot</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+			<arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[0]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">330.0</max-lb>
+		</weight>
+	</payload>
 	<nasal>
 		<updateloop>
 			<file>Aircraft/Generic/updateloop.nas</file>
@@ -160,6 +176,7 @@
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/engine.nas</file>
 			<file>Nasal/clock.nas</file>
+			<file>Aircraft/Generic/limits.nas</file>
 		</c140>
 		<libraries>
 			<file>Nasal/kx165a.nas</file>

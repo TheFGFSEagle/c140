@@ -8,41 +8,41 @@
 		<flight-model archive="y">jsb</flight-model>
 		<aero archive="y">c140</aero><!--
 		<previews>
-			<preview>
-				<type>cockpit</type>
-				<splash type="bool">true</splash>
-				<path>Splash/cockpit1.jpg</path>
-			</preview>
-			<preview>
-				<type>cockpit</type>
-				<splash type="bool">true</splash>
-				<path>Splash/cockpit2.jpg</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/exterior1.jpg</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/exterior2.jpg</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/exterior3.jpg</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/exterior4.jpg</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/exterior5.jpg</path>
-			</preview>
+		<preview>
+		<type>cockpit</type>
+		<splash type="bool">true</splash>
+		<path>Splash/cockpit1.jpg</path>
+		</preview>
+		<preview>
+		<type>cockpit</type>
+		<splash type="bool">true</splash>
+		<path>Splash/cockpit2.jpg</path>
+		</preview>
+		<preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/exterior1.jpg</path>
+		</preview>
+		<preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/exterior2.jpg</path>
+		</preview>
+		<preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/exterior3.jpg</path>
+		</preview>
+		<preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/exterior4.jpg</path>
+		</preview>
+		<preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/exterior5.jpg</path>
+		</preview>
 		</previews>-->
 		<rating>
 			<FDM type="int">0</FDM>
@@ -52,4 +52,36 @@
 		</rating>
 		<fuel-fraction>0.5</fuel-fraction>
 	</sim>
+	<limits>
+		<!--	Ref.1, p.7	-->
+		<max-positive-g>4.57</max-positive-g>
+		<max-negative-g>-2.26</max-negative-g>
+		
+		<!--	Ref.1, p.8	-->
+		<vne>121.66</vne>	<!-- 140 mph -->
+		<max-flap-extension-speed>
+			<flaps>0.01</flaps> <!-- applicable for any flap extension -->
+			<speed>71.26</speed> <!-- 82 mph -->
+		</max-flap-extension-speed>
+		
+		<!--	Ref.1, p.9	-->
+		<mass-and-balance>
+			<maximum-ramp-mass-lbs>1450</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>1450</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>1450</maximum-landing-mass-lbs>
+			<cg>
+				<dimension type="string">in</dimension>
+				<limit>
+					<entry>
+						<position type="double">-62.224</position> <!-- = 13.5 in aft of datum -->
+						<mass-lbs type="double">1450</mass-lbs>
+					</entry>
+					<entry>
+						<position type="double">-58.024</position> <!-- = 17.7 in aft of datum -->
+						<mass-lbs type="double">1450</mass-lbs>
+					</entry>
+				</limit>
+			</cg>
+		</mass-and-balance>
+	</limits>
 </PropertyList>
