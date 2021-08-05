@@ -15,6 +15,10 @@
 		<object-name>glass.navlights</object-name>
 	</effect>
 	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>prop.disc</object-name>
+	</effect>
+	<effect>
 		<inherits-from>Aircraft/c140/Models/Effects/interior/panel-reflection</inherits-from>
 		<object-name>panel-reflective</object-name>
 		<object-name>yoke.L</object-name>
@@ -387,6 +391,44 @@
 	</model>
 	
 	<!-- ### ANIMATIONS ### -->
+	<!-- Propeller -->
+	<animation>
+		<type>select</type>
+		<object-name>prop.mc_cauley</object-name>
+		<condition>
+			<less-than>
+				<property>engines/engine/thruster/rpm</property>
+				<value>500</value>
+			</less-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>prop.disc</object-name>
+		<condition>
+			<greater-than>
+				<property>engines/engine/thruster/rpm</property>
+				<value>400</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>prop.mc_cauley</object-name>
+		<property>engines/engine/thruster/rpm</property>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+	<animation> 
+		<type>material</type> 
+		<object-name>prop.disc</object-name>
+		 <transparency>
+			<alpha-prop>engines/engine/thruster/rpm</alpha-prop>
+			<factor>-0.0001</factor>
+			<offset>.3</offset>
+		</transparency>
+	</animation>
 	<!-- Instrument Panel -->
 	<!-- Switches -->
 	<animation>
