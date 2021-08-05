@@ -16,6 +16,7 @@
 		[1]	Operation Manual 		https://ad7zj.net/wiki/images/1/19/Operation_Manual_for_Cessna_120_140.pdf
 		[2]	Type Certificate Data Sheet	https://rgl.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/2d3c513e9ce4433886257ed2006fb509/$FILE/A-768_Rev_35.pdf
 		[3]	AOPA Pilot Article		https://www.aopa.org/news-and-media/all-news/2011/october/pilot/budget-buy-drag-your-tail-cheaply
+		[4]	Weight and Balance		https://cessna120140.com/wp-content/uploads/2019/06/weight-and-balance.pdf
 	-->
 	
 	<!--	Coordinate Reference Note:		Wing leading edge = Datum:	 x = -1.92339 m =~ -75.724 in	-->
@@ -64,7 +65,7 @@
 		<pointmass name="Pilot">
 			<weight unit="KG"> 80 </weight>
 			<location name="POINTMASS" unit="M">
-				<x>  -1.35 </x>
+				<x>  -1.428 </x>	<!-- Ref. 4: Arm 19.5 in behind datum, x = -56.224 in = -1.428 m	-->
 				<y>  -0.30 </y>
 				<z>   0.00 </z>
 			</location>
@@ -72,7 +73,15 @@
 		<pointmass name="Copilot">
 			<weight unit="KG"> 80 </weight>
 			<location name="POINTMASS" unit="M">
-				<x>  -1.35 </x>
+				<x>  -1.428 </x>	<!-- Ref. 4: Arm 19.5 in behind datum, x = -56.224 in = -1.428 m	-->
+				<y>   0.30 </y>
+				<z>   0.00 </z>
+			</location>
+		</pointmass>
+		<pointmass name="Baggage">
+			<weight unit="KG"> 80 </weight>
+			<location name="POINTMASS" unit="M">
+				<x>  -0.971 </x>	<!-- Ref. 4: Arm 37.5 in behind datum, x = -38.224 in = -0.971 m	-->
 				<y>   0.30 </y>
 				<z>   0.00 </z>
 			</location>
@@ -111,7 +120,7 @@
 		<!-- See figure 4 from [1] (page 16) -->
 		<tank type="FUEL" number="0">
 			<location unit="M">
-				<x>    -1.30 </x>
+				<x>    -1.339 </x>	<!-- Ref. 4: Arm 23.0 in behind datum, x = -52.724 in = -1.339 m	-->
 				<y>    -1.00 </y>
 				<z>    -0.62 </z>
 			</location>
@@ -121,7 +130,7 @@
 		</tank>
 		<tank type="FUEL" number="1">
 			<location unit="M">
-				<x>    -1.30 </x>
+				<x>    -1.339 </x>	<!-- Ref. 4: Arm 23.0 in behind datum, x = -52.724 in = -1.339 m	-->
 				<y>     1.00 </y>
 				<z>    -0.62 </z>
 			</location>
@@ -131,10 +140,10 @@
 		</tank>
 		<!-- Fuel Strainer -->
 		<tank type="FUEL">
-			<location unit="IN">
-				<x> 56 </x>
-				<y> 0 </y>
-				<z> 59.4 </z>
+			<location unit="M">
+				<x> -2.429 </x>	<!-- Ref. 1, p. 16, figure 4:	located at firewall	 -->
+				<y>  0.0   </y> <!-- guess -->
+				<z> -0.15  </z> <!-- guess -->
 			</location>
 			<capacity unit="LBS">0.1</capacity>
 			<contents unit="LBS">0.0</contents>
