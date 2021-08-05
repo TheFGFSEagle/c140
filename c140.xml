@@ -12,7 +12,7 @@
 		<description> Models a Cessna140. </description>
 	</fileheader>
 	
-	<!-- Reference:
+	<!-- References:
 		[1]	Operation Manual 		https://ad7zj.net/wiki/images/1/19/Operation_Manual_for_Cessna_120_140.pdf
 		[2]	Type Certificate Data Sheet	https://rgl.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/2d3c513e9ce4433886257ed2006fb509/$FILE/A-768_Rev_35.pdf
 		[3]	AOPA Pilot Article		https://www.aopa.org/news-and-media/all-news/2011/october/pilot/budget-buy-drag-your-tail-cheaply
@@ -93,7 +93,7 @@
 				<yaw>     0.00 </yaw>
 			</orient>
 			<feed> 2 </feed> <!-- fed by fuel strainer -->
-			<thruster file="Sensenich_72in">
+			<thruster file="McCauley-1A90-CF7148">
 				<sense> 1 </sense>
 				<location unit="M">
 					<x>    -3.32 </x>
