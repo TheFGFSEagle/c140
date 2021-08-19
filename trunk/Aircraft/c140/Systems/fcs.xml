@@ -120,11 +120,23 @@
 			<output>fcs/rudder-pos-norm</output>
 		</aerosurface_scale>
 		
-		<pure_gain>
-			<input>fcs/rudder-pos-norm</input>
-			<gain>1.0</gain>
+		<!--	Implement spring simulation based on https://forum.flightgear.org/viewtopic.php?f=4&t=39615, thanks to OO-ZVY!	-->
+		<fcs_function>
+			<function>
+				<product>
+					<property>fcs/rudder-pos-norm</property>
+					<table>
+						<independentVar lookup="row">/velocities/groundspeed-kt</independentVar>
+						<tableData>
+							0	1
+							5	1
+							10	0.3
+						</tableData>
+					</table>
+				</product>
+			</function>
 			<output>fcs/steer-cmd-norm</output>
-		</pure_gain>
+		</fcs_function>
 	</channel>
 	<channel name="Flaps">
 		<kinematic name="Flaps Control">
