@@ -6,44 +6,19 @@
 		<aircraft-version>01/2021</aircraft-version>
 		<status>alpha</status>
 		<flight-model archive="y">jsb</flight-model>
-		<aero archive="y">c140</aero><!--
+		<aero archive="y">c140</aero>
 		<previews>
-		<preview>
-		<type>cockpit</type>
-		<splash type="bool">true</splash>
-		<path>Splash/cockpit1.jpg</path>
-		</preview>
-		<preview>
-		<type>cockpit</type>
-		<splash type="bool">true</splash>
-		<path>Splash/cockpit2.jpg</path>
-		</preview>
-		<preview>
-		<type>exterior</type>
-		<splash type="bool">true</splash>
-		<path>Splash/exterior1.jpg</path>
-		</preview>
-		<preview>
-		<type>exterior</type>
-		<splash type="bool">true</splash>
-		<path>Splash/exterior2.jpg</path>
-		</preview>
-		<preview>
-		<type>exterior</type>
-		<splash type="bool">true</splash>
-		<path>Splash/exterior3.jpg</path>
-		</preview>
-		<preview>
-		<type>exterior</type>
-		<splash type="bool">true</splash>
-		<path>Splash/exterior4.jpg</path>
-		</preview>
-		<preview>
-		<type>exterior</type>
-		<splash type="bool">true</splash>
-		<path>Splash/exterior5.jpg</path>
-		</preview>
-		</previews>-->
+            <preview>
+                <type>cockpit</type>
+                <path>Previews/preview1.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/preview2.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+        </previews>
 		<rating>
 			<FDM type="int">0</FDM>
 			<systems type="int">0</systems>
