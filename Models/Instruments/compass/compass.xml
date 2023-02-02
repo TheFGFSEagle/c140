@@ -1,7 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- ported from C150 by Harald Johnsen et.al, thanks! -->
 <PropertyList>
-	
 	<path>compass.ac</path>
 	
 	<effect>
@@ -9,17 +8,16 @@
 		<object-name>compass</object-name>
 	</effect>
 	
-	
 	<animation>
 		<type>material</type>
 		<object-name>Compass</object-name>
 		<object-name>Needle</object-name>
 		<object-name>Interior</object-name>
 		<emission>
-			<red>1.0</red>
-			<green>0.8</green>
-			<blue>0.4</blue>
-			<factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
+			<red>0.07</red>
+			<green>0.06</green>
+			<blue>0.04</blue>
+			<factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
 		</emission>
 	</animation> 
 	
@@ -76,5 +74,4 @@
 			<property>/sim/panel-hotspots</property>
 		</condition>
 	</animation>
-	
 </PropertyList>
