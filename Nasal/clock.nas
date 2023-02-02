@@ -32,6 +32,12 @@
 		 m.MN=m.lc2.initNode("indicated-min",0,"INT");
 		 m.ET_HR=m.lc2.initNode("ET-hr",0,"INT");
 		 m.ET_MN=m.lc2.initNode("ET-min",0,"INT");
+		
+		m.updateTimer = maketimer(0.5, func {
+			m.update_clock();
+		});
+		m.updateTimer.simulatedTime = 1;
+		m.updateTimer.start();
 		 return m;
 	 },
 	 
@@ -136,8 +142,8 @@
 		 }
 		 
 		 if(me.MODE == 0){
-			 me.HR.setValue(getprop("/instrumentation/clock/local-hour"));
-			 me.MN.setValue(getprop("/instrumentation/clock/indicated-min"));
+			 me.HR.setValue(props.globals.getValue("/instrumentation/clock/local-hour"));
+			 me.MN.setValue(props.globals.getValue("/instrumentation/clock/indicated-min"));
 		 }elsif(me.MODE==1){
 			 me.HR.setValue(me.ET_HR.getValue());
 			 me.MN.setValue(me.ET_MN.getValue());
@@ -156,16 +162,6 @@
 		 me.flip=1-me.flip;
 	 },
  };
- #####################################
  
- var astrotech=lc2.new("instrumentation/clock/lc2");
- 
- var update = func{
-	 astrotech.update_clock();
-	 settimer(update,0.5);
- }
- 
- settimer(update,2);
- 
- print("Astro Tech LC-2 Chronometer Loaded");
+var astrotech = lc2.new("instrumentation/clock/lc2");
  

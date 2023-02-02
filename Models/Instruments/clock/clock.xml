@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <!-- ported from C150 by Harald Johnsen et.al, thanks! -->
 <PropertyList>
-	
 	<path>clock.ac</path>
 	
 	<effect>
@@ -29,7 +28,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>SecondHand</object-name>
-		<property>/sim/model/c140/local-time-seconds</property>
+		<property>instrumentation/clock/indicated-sec</property>
 		<factor>6</factor>
 		<axis>
 			<x>-1</x>
@@ -41,7 +40,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>MinuteHand</object-name>
-		<property>/sim/model/c140/local-time-seconds</property>
+		<property>instrumentation/clock/indicated-sec</property>
 		<factor>0.1</factor>
 		<axis>
 			<x>-1</x>
@@ -53,15 +52,29 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>HourHand</object-name>
-		<property>/sim/model/c140/local-time-seconds</property>
-		<factor>0.008333</factor>
+		<expression>
+			<sum>
+				<product>
+					<property>instrumentation/clock/local-hour</property>
+					<value>15</value>
+				</product>
+				<div>
+					<dif>
+						<property>instrumentation/clock/indicated-sec</property>
+						<product>
+							<property>instrumentation/clock/indicated-hour</property>
+							<value>3600</value>
+						</product>
+					</dif>
+					<value>120</value>
+				</div>
+			</sum>
+		</expression>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
 	</animation>
-	
 </PropertyList>
-
 
