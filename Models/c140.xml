@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
 	<path>c140.ac</path>
 	
@@ -14,92 +13,6 @@
 		<object-name>glass.taillight</object-name>
 		<object-name>glass.navlights</object-name>
 		<object-name>prop.disc</object-name>
-	</animation>
-	<effect>
-		<inherits-from>Effects/glass</inherits-from>
-		<object-name>glass</object-name>
-		<object-name>glass.taillight</object-name>
-		<object-name>glass.navlights</object-name>
-	</effect>
-	<effect>
-		<inherits-from>Effects/model-transparent</inherits-from>
-		<object-name>prop.disc</object-name>
-	</effect>
-	<effect>
-		<inherits-from>Aircraft/c140/Models/Effects/interior/panel-reflection</inherits-from>
-		<object-name>panel-reflective</object-name>
-		<object-name>yoke.L</object-name>
-		<object-name>yoke.R</object-name>
-	</effect>
-	<effect>
-		<inherits-from>Aircraft/c140/Models/Effects/exterior/fuselage</inherits-from>
-		<object-name>fuselage</object-name>
-		<object-name>vstab</object-name>
-		<object-name>rudder</object-name>
-		<object-name>hstab</object-name>
-		<object-name>elevator</object-name>
-		<object-name>aileron.L</object-name>
-		<object-name>aileron.R</object-name>
-		<object-name>flap.L</object-name>
-		<object-name>flap.R</object-name>
-		<object-name>door.L</object-name>
-		<object-name>window.frame.L</object-name>
-		<object-name>door.R</object-name>
-		<object-name>window.frame.R</object-name>
-		<object-name>gear.L</object-name>
-		<object-name>gear.R</object-name>
-	</effect>
-	<effect>
-		<inherits-from>Aircraft/c140/Models/Effects/interior/interior</inherits-from>
-		<object-name>interior</object-name>
-		<object-name>floor</object-name>
-		<object-name>pedal.left.0</object-name>
-		<object-name>pedal.left.1</object-name>
-		<object-name>pedal.right.0</object-name>
-		<object-name>pedal.right.1</object-name>
-		<object-name>tube</object-name>
-		<object-name>door.L.int</object-name>
-		<object-name>door.R.int</object-name>
-		<object-name>window.frame.L.int</object-name>
-		<object-name>window.frame.R.int</object-name>
-		<!--	Instrument Panel	-->
-		<object-name>panel</object-name>
-		<!--	Switches	-->
-		<object-name>master.switch</object-name>
-		<object-name>tb.switch</object-name>
-		<object-name>navlts.switch</object-name>
-		<object-name>ldglts.switch</object-name>
-		<!--	Levers	-->
-		<object-name>mixer.lever</object-name>
-		<object-name>primer.lever</object-name>
-		<object-name>carbheat.lever</object-name>
-		<object-name>parkbrake.lever</object-name>
-		<object-name>cabinheat.lever</object-name>
-		<object-name>starter.lever</object-name>
-		<object-name>throttle.lever</object-name>
-	</effect>
-	
-	<!-- Liveries -->
-	<animation>
-		<type>material</type>
-		<object-name>fuselage</object-name>
-		<object-name>vstab</object-name>
-		<object-name>rudder</object-name>
-		<object-name>hstab</object-name>
-		<object-name>elevator</object-name>
-		<object-name>aileron.L</object-name>
-		<object-name>aileron.R</object-name>
-		<object-name>flap.L</object-name>
-		<object-name>flap.R</object-name>
-		<object-name>door.L</object-name>
-		<object-name>window.frame.L</object-name>
-		<object-name>door.R</object-name>
-		<object-name>window.frame.R</object-name>
-		<object-name>gear.L</object-name>
-		<object-name>gear.R</object-name>
-		<property-base>sim/model/livery</property-base> 
-		<texture-prop>texture</texture-prop> 
-		<texture>c140.png</texture>
 	</animation>
 	
 	<!-- Include Lights -->
@@ -430,7 +343,7 @@
 	<animation> 
 		<type>material</type> 
 		<object-name>prop.disc</object-name>
-		 <transparency>
+		<transparency>
 			<alpha-prop>engines/engine/thruster/rpm</alpha-prop>
 			<factor>-0.0001</factor>
 			<offset>.3</offset>
@@ -586,10 +499,16 @@
 	</animation>
 	<!-- based on c172p -->
 	<animation>
-		<type>pick</type>
+		<type>slider</type>
 		<object-name>primer.lever</object-name>
+		<property>/controls/engines/engine/primer-animation</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 		<action>
-			<button>0</button>
 			<binding>
 				<command>nasal</command>
 				<script>c140.pumpPrimer();</script>
@@ -603,17 +522,6 @@
 				<property>controls/engines/engine/primer</property>
 			</binding>
 		</hovered>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>primer.lever</object-name>
-		<property>/controls/engines/engine/primer-animation</property>
-		<factor>0.04</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -637,20 +545,7 @@
 		</action>
 	</animation>
 	<animation>
-		<type>pick</type>
-		<object-name>parkbrake.lever</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>controls/gear/brake-parking</property>
-				<value>1.0</value>
-				<value>0.0</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>translate</type>
+		<type>slider</type>
 		<object-name>parkbrake.lever</object-name>
 		<property>controls/gear/brake-parking</property>
 		<factor>0.04</factor>
@@ -659,6 +554,12 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/gear/brake-parking</property>
+			</binding>
+		</action>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -682,7 +583,7 @@
 		</action>
 	</animation>
 	<animation>
-		<type>translate</type>
+		<type>slider</type>
 		<drag-direction>vertical</drag-direction>
 		<object-name>starter.lever</object-name>
 		<property>controls/switches/starter</property>
@@ -692,25 +593,20 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>starter.lever</object-name>
 		<action>
-			<button>0</button>
 			<binding>
 				<command>property-assign</command>
 				<property>controls/switches/starter</property>
 				<value>1</value>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/starter</property>
-					<value>0</value>
-				</binding>
-			</mod-up>
 		</action>
+		<release>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/switches/starter</property>
+				<value>0</value>
+			</binding>
+		</release>
 	</animation>
 	
 	<!-- Yoke -->
@@ -901,4 +797,90 @@
 		</center>
 	</animation>
 	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>glass</object-name>
+		<object-name>glass.taillight</object-name>
+		<object-name>glass.navlights</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>prop.disc</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/interior/panel-reflection</inherits-from>
+		<object-name>panel-reflective</object-name>
+		<object-name>yoke.L</object-name>
+		<object-name>yoke.R</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/exterior/fuselage</inherits-from>
+		<object-name>fuselage</object-name>
+		<object-name>vstab</object-name>
+		<object-name>rudder</object-name>
+		<object-name>hstab</object-name>
+		<object-name>elevator</object-name>
+		<object-name>aileron.L</object-name>
+		<object-name>aileron.R</object-name>
+		<object-name>flap.L</object-name>
+		<object-name>flap.R</object-name>
+		<object-name>door.L</object-name>
+		<object-name>window.frame.L</object-name>
+		<object-name>door.R</object-name>
+		<object-name>window.frame.R</object-name>
+		<object-name>gear.L</object-name>
+		<object-name>gear.R</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/interior/interior</inherits-from>
+		<object-name>interior</object-name>
+		<object-name>floor</object-name>
+		<object-name>pedal.left.0</object-name>
+		<object-name>pedal.left.1</object-name>
+		<object-name>pedal.right.0</object-name>
+		<object-name>pedal.right.1</object-name>
+		<object-name>tube</object-name>
+		<object-name>door.L.int</object-name>
+		<object-name>door.R.int</object-name>
+		<object-name>window.frame.L.int</object-name>
+		<object-name>window.frame.R.int</object-name>
+		<!--	Instrument Panel	-->
+		<object-name>panel</object-name>
+		<!--	Switches	-->
+		<object-name>master.switch</object-name>
+		<object-name>tb.switch</object-name>
+		<object-name>navlts.switch</object-name>
+		<object-name>ldglts.switch</object-name>
+		<!--	Levers	-->
+		<object-name>mixer.lever</object-name>
+		<object-name>primer.lever</object-name>
+		<object-name>carbheat.lever</object-name>
+		<object-name>parkbrake.lever</object-name>
+		<object-name>cabinheat.lever</object-name>
+		<object-name>starter.lever</object-name>
+		<object-name>throttle.lever</object-name>
+	</effect>
+	
+	<!-- Liveries -->
+	<animation>
+		<type>material</type>
+		<object-name>fuselage</object-name>
+		<object-name>vstab</object-name>
+		<object-name>rudder</object-name>
+		<object-name>hstab</object-name>
+		<object-name>elevator</object-name>
+		<object-name>aileron.L</object-name>
+		<object-name>aileron.R</object-name>
+		<object-name>flap.L</object-name>
+		<object-name>flap.R</object-name>
+		<object-name>door.L</object-name>
+		<object-name>window.frame.L</object-name>
+		<object-name>door.R</object-name>
+		<object-name>window.frame.R</object-name>
+		<object-name>gear.L</object-name>
+		<object-name>gear.R</object-name>
+		<property-base>sim/model/livery</property-base> 
+		<texture-prop>texture</texture-prop> 
+		<texture>c140.png</texture>
+	</animation>
 </PropertyList>
