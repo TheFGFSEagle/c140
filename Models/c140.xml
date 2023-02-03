@@ -629,7 +629,7 @@
 		<type>rotate</type>
 		<object-name>rudder</object-name>
 		<object-name>glass.taillight</object-name>
-		<object-name>tail_navlight</object-name>
+		<object-name>TailNavLight</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
 		<factor>16</factor>
 		<axis>
