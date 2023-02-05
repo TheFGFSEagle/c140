@@ -1,16 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	
 	<path>asi.ac</path>
 	
 	<effect>
-		<inherits-from>Effects/glass</inherits-from>
-		<object-name>asi.glass</object-name>
-	</effect>
-	
-	<effect>
-		<inherits-from>Effects/model-transparent</inherits-from>
+		<inherits-from>../../Effects/interior/instrument-glass</inherits-from>
 		<object-name>asi.glass</object-name>
 	</effect>
 	
@@ -42,5 +35,4 @@
 			<z>  0 </z>
 		</axis>
 	</animation>
-	
 </PropertyList>
