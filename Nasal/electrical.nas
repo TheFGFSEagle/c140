@@ -393,10 +393,15 @@ var inst_nav_bus_1 = func() {
 			setprop("/systems/electrical/outputs/nav-lights-norm", 0.0);
 		}
 		load += 4.52;
+		if (props.globals.getValue("/sim/equipment/astrotech-lc2")) {
+			load += 0.01;
+		}
+		props.globals.setBoolValue("/instrumentation/clock/powered", 1);
 	} else {
 		setprop("/systems/electrical/outputs/instrument-lights", 0.0);
 		setprop("/systems/electrical/outputs/nav-lights", 0.0);
 		setprop("/systems/electrical/outputs/nav-lights-norm", 0.0);
+		props.globals.setBoolValue("/instrumentation/clock/powered", 1);
 	}
 
 

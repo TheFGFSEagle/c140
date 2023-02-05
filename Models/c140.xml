@@ -2,10 +2,6 @@
 <PropertyList>
 	<path>c140.ac</path>
 	
-	<params>
-		<nav-light type="string">systems/electrical/outputs/nav-lights-norm</nav-light>
-	</params>
-	
 	<!-- Effects -->
 	<animation>
 		<type>noshadow</type>
@@ -108,6 +104,7 @@
 		</offsets>
 	</model>
 	<model>
+		<name>Clock</name>
 		<path>Instruments/clock/clock.xml</path>
 		<offsets>
 			<x-m>-1.862</x-m>
@@ -115,6 +112,31 @@
 			<z-m>0.201207</z-m>
 		</offsets>
 	</model>
+	<model>
+		<name>AstrotechLC2</name>
+		<path>Instruments/astrotech-lc2/astrotech-lc2.xml</path>
+		<offsets>
+			<x-m>-1.862</x-m>
+			<y-m>0.329168</y-m>
+			<z-m>0.201207</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<type>select</type>
+		<object-name>AstrotechLC2</object-name>
+		<condition>
+			<property>sim/equipment/astrotech-lc2</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Clock</object-name>
+		<condition>
+			<not>
+				<property>sim/equipment/astrotech-lc2</property>
+			</not>
+		</condition>
+	</animation>
 	<!-- small -->
 	<model>
 		<path>Instruments/engine/amps.xml</path>
