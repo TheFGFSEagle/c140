@@ -201,6 +201,7 @@
 		</updateloop>
 		<c140>
 			<file>Nasal/c140.nas</file>
+			<file>Nasal/controls.nas</file>
 			<file>Nasal/dialogs.nas</file>
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/engine.nas</file>

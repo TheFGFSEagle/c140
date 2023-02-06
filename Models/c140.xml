@@ -488,6 +488,39 @@
 		</release>
 	</animation>
 	
+	<animation>
+		<type>knob</type>
+		<object-name>FlapLever</object-name>
+		<axis>
+			<object-name>FlapLeverAxis</object-name>
+			<swap-axis-direction/>
+		</axis>
+		<property>controls/flight/flaps</property>
+		<factor>40</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/flaps</property>
+				<min>0</min>
+				<max>1</max>
+				<factor>0.01</factor>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>flaps-handle</tooltip-id>
+				<label>Flaps extension: %d°</label>
+				<measure-text>Flaps extension: 40°</measure-text>
+				<property>controls/flight/flaps</property>
+				<mapping>nasal</mapping>
+				<script>
+					return arg[0] * 40;
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
 	<!-- Yoke -->
 	<animation>
 		<type>rotate</type>
