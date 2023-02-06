@@ -25,7 +25,7 @@
 			<zero_angle type="float">0.98</zero_angle>
 			<outer_gain type="float">0.1</outer_gain>
 			
-			<intensity_scale type="float"><use>systems/electrical/outputs/nav-lights</use></intensity_scale>
+			<intensity_scale type="float"><use>systems/electrical/outputs/nav-lights-norm</use></intensity_scale>
 		</parameters>
 	</effect>
 	
@@ -48,7 +48,7 @@
 		<overlay>
 			<params>
 				<light-used>white</light-used>
-				<show-prop>systems/electrical/outputs/nav-lights</show-prop>
+				<show-prop>systems/electrical/outputs/nav-lights-norm</show-prop>
 			</params>
 		</overlay>
 	</model>
@@ -93,7 +93,7 @@
 		<spot-cutoff>70</spot-cutoff>
 		<range-m>20</range-m>
 		<dim-factor>
-			<property>systems/electrical/outputs/nav-lights</property>
+			<property>systems/electrical/outputs/nav-lights-norm</property>
 		</dim-factor>
 	</light>
 </PropertyList>
