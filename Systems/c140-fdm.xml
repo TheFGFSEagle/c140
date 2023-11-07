@@ -6,7 +6,7 @@
 	    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	
 	<fileheader>
-		<author>Benedikt Wolf (D-ECHO) </author>
+		<author>Bea Wolf (D-ECHO) </author>
 		<filecreationdate> 16 Feb 2020 </filecreationdate>
 		<version>$Revision: 1.80 $</version>
 		<description> Models a Cessna140. </description>
