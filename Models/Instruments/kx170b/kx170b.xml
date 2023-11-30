@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<!--
+        Bendix/King KX170B COM/NAV radio
+
+        Created by Torsten Dreyer, October 2008 (KX165)
+	  Adapted to KX170B Bea Wolf, November 2023
+
+        You might want to use the following code in your aircraft's nasal
+        init function to keep the settings of the radio persistent between
+        flightgear sessions
+
+        aircraft.data.add(
+        "instrumentation/comm[0]/volume-selected",
+        "instrumentation/comm[0]/frequencies/selected-mhz",
+        "instrumentation/comm[0]/frequencies/standby-mhz",
+        "instrumentation/comm[0]/frequencies/dial-khz",
+        "instrumentation/comm[0]/frequencies/dial-mhz",
+        "instrumentation/comm[0]/test-btn",
+        "instrumentation/nav[0]/ident-audible",
+        "instrumentation/nav[0]/power-btn",
+        "instrumentation/nav[0]/frequencies/selected-mhz",
+        "instrumentation/nav[0]/frequencies/standby-mhz",
+        "instrumentation/nav[0]/frequencies/dial-khz",
+        "instrumentation/nav[0]/frequencies/dial-mhz",
+        );
+    -->
+	<params>
+		<comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
+		<nav-serviceable>instrumentation/nav[0]/serviceable</nav-serviceable>
+		<power-nav>instrumentation/nav[0]/power-btn</power-nav>
+		<power-comm>instrumentation/comm[0]/power-btn</power-comm>
+		<comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
+		<comm-power-knob>instrumentation/comm[0]/power-knob</comm-power-knob>
+		<comm-dial-khz>instrumentation/comm[0]/frequencies/dial-khz</comm-dial-khz>
+		<comm-dial-mhz>instrumentation/comm[0]/frequencies/dial-mhz</comm-dial-mhz>
+		<comm-volume>instrumentation/comm[0]/volume-selected</comm-volume>
+		<comm-test>instrumentation/comm[0]/test-btn</comm-test>
+		<channel-mode-selector>instrumentation/comm[0]/channel-mode-selector</channel-mode-selector>
+		<nav-frq-selected>instrumentation/nav[0]/frequencies/selected-mhz</nav-frq-selected>
+		<nav-power-knob>instrumentation/nav[0]/power-knob</nav-power-knob>
+		<nav-dial-khz>instrumentation/nav[0]/frequencies/dial-khz</nav-dial-khz>
+		<nav-dial-mhz>instrumentation/nav[0]/frequencies/dial-mhz</nav-dial-mhz>
+		<nav-volume>instrumentation/nav[0]/volume</nav-volume>
+		<nav-audio>instrumentation/nav[0]/ident-audible</nav-audio>
+	</params>
+	<path>kx170b.ac</path>
+	<effect>
+		<inherits-from>Models/Effects/interior/instrument-glass</inherits-from>
+		<object-name>kx170b.glass</object-name>
+	</effect>
+	
+	<!--	COMM 1 -->
+	<animation>
+		<type>rotate</type>
+		<object-name>kx170b.comm.mhz_dial</object-name>
+		<expression>
+			<product>
+				<floor>
+					<difference>
+						<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+						<value>118.0</value>
+					</difference>
+				</floor>
+				<value>-20</value>
+			</product>
+		</expression>
+		<center>
+			<x-m>-0.01 </x-m>
+			<z-m> 0.013</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>kx170b.comm.khz_dial.1</object-name>
+		<expression>
+			<prod>
+				<floor>
+					<sum>
+						<prod>
+							<mod>
+								<property alias="/params/comm-frq-selected" />
+								<value>1</value>
+							</mod>
+							<value>10.0</value>
+						</prod>
+						<value>0.05</value>
+					</sum>
+				</floor>
+				<value>-36.0</value>
+			</prod>
+		</expression>
+		<center>
+			<x-m>-0.01 </x-m>
+			<z-m> 0.013</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>kx170b.comm.khz_dial.2</object-name>
+		<expression>
+			<prod>
+				<table>
+					<floor>
+						<sum>
+							<product>
+								<mod>
+									<property alias="/params/comm-frq-selected" />
+									<value>0.1</value>
+								</mod>
+								<value>1000.0</value>
+							</product>
+							<value>0.5</value>
+						</sum>
+					</floor>
+					<entry>
+						<ind>0.0</ind>
+						<dep>0.0</dep>
+					</entry>
+					<entry>
+						<ind>25</ind>
+						<dep>3.0</dep>
+					</entry>
+					<entry>
+						<ind>50</ind>
+						<dep>5.0</dep>
+					</entry>
+					<entry>
+						<ind>75</ind>
+						<dep>7.0</dep>
+					</entry>
+					<entry>
+						<ind>100.0</ind>
+						<dep>0.0</dep>
+					</entry>
+				</table>
+				<value>-36.0</value>
+			</prod>
+		</expression>
+		<center>
+			<x-m>-0.01 </x-m>
+			<z-m> 0.013</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Knobs -->
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.comm.pwr_knob</object-name>
+		<property alias="/params/comm-power-knob"/>
+		<factor>-35</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>-0.024</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-power-knob"/>
+				<factor>1</factor>
+				<min>0</min>
+				<max>2</max>
+				<wrap>false</wrap>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property alias="/params/power-comm"/>
+				<value>1</value>
+				<condition>
+					<greater-than>
+						<property alias="/params/comm-power-knob"/>
+						<value>0</value>
+					</greater-than>
+				</condition>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property alias="/params/power-comm"/>
+				<value>0</value>
+				<condition>
+					<equals>
+						<property alias="/params/comm-power-knob"/>
+						<value>0</value>
+					</equals>
+				</condition>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-pwr</tooltip-id>
+				<label>COMM1: %s</label>
+				<property alias="/params/comm-power-knob"/>
+				<mapping>nasal</mapping>
+				<script>
+					var s = [ "OFF", "ON", "TEST" ];
+					return s[ arg[0] ];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.comm.vol_knob</object-name>
+		<property alias="/params/comm-volume"/>
+		<factor>-270</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>-0.064</y-m>
+			<z-m>-0.023</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-volume"/>
+				<factor>0.1</factor>
+				<min>0.0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-volume</tooltip-id>
+				<label>COMM1 Volume: %3d%%</label>
+				<property alias="/params/comm-volume"/>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.comm.khz_knob</object-name>
+		<property alias="/params/comm-dial-khz"/>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>-0.024</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-dial-khz"/>
+				<factor>4</factor>
+				<min>0</min>
+				<max>1440</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-frq-selected"/>
+				<factor>0.025</factor>
+				<min>0.0</min>
+				<max>1.0</max>
+				<resolution>0.025</resolution>
+				<wrap>true</wrap>
+				<mask>decimal</mask>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-kHz</tooltip-id>
+				<label>Adjust COM1 kHz</label>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.comm.mhz_knob</object-name>
+		<property alias="/params/comm-dial-mhz"/>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m>-0.024</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-frq-selected"/>
+				<factor>1</factor>
+				<min>118</min>
+				<max>136</max>
+				<wrap>true</wrap>
+				<mask>integer</mask>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-dial-mhz"/>
+				<factor>4</factor>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-MHz</tooltip-id>
+				<label>Adjust COM1 MHz</label>
+			</binding>
+		</hovered>
+	</animation>
+	
+	
+	<!--	NAV 1 -->
+	<animation>
+		<type>rotate</type>
+		<object-name>kx170b.nav.mhz_dial</object-name>
+		<expression>
+			<product>
+				<floor>
+					<difference>
+						<property alias="/params/nav-frq-selected" />
+						<value>108.0</value>
+					</difference>
+				</floor>
+				<value>-36</value>
+			</product>
+		</expression>
+		<center>
+			<x-m>-0.01 </x-m>
+			<z-m> 0.013</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>kx170b.nav.khz_dial</object-name>
+		<expression>
+			<prod>
+				<mod>
+					<property alias="/params/nav-frq-selected" />
+					<value>1</value>
+				</mod>
+				<value>-360.0</value>
+			</prod>
+		</expression>
+		<center>
+			<x-m>-0.01 </x-m>
+			<z-m> 0.013</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Knobs -->
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.nav.pwr_knob</object-name>
+		<property alias="/params/nav-power-knob"/>
+		<factor>-35</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.046</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/nav-power-knob"/>
+				<factor>1</factor>
+				<min>0</min>
+				<max>2</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav1-pwr</tooltip-id>
+				<label>NAV1: %s</label>
+				<property alias="/params/nav-power-knob"/>
+				<mapping>nasal</mapping>
+				<script>
+					var s = [ "OFF", "VOICE", "IDENT" ];
+					return s[ arg[0] ];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.nav.vol_knob</object-name>
+		<property alias="/params/nav-volume"/>
+		<factor>-270</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.009</y-m>
+			<z-m>-0.023</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/nav-volume"/>
+				<factor>0.1</factor>
+				<min>0.0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav1-volume</tooltip-id>
+				<label>NAV1 Volume: %3d%%</label>
+				<property alias="/params/nav-volume"/>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.nav.khz_knob</object-name>
+		<property alias="/params/nav-dial-khz"/>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.046</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/nav-dial-khz"/>
+				<factor>4</factor>
+				<min>0</min>
+				<max>1440</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/nav-frq-selected"/>
+				<factor>0.05</factor>
+				<min>0.0</min>
+				<max>1.0</max>
+				<resolution>0.05</resolution>
+				<wrap>true</wrap>
+				<mask>decimal</mask>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav1-kHz</tooltip-id>
+				<label>Adjust NAV1 kHz</label>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>kx170b.nav.mhz_knob</object-name>
+		<property alias="/params/nav-dial-mhz"/>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.046</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/nav-frq-selected"/>
+				<factor>1</factor>
+				<min>108.0</min>
+				<max>118.0</max>
+				<wrap>true</wrap>
+				<mask>integer</mask>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/nav-dial-mhz"/>
+				<factor>4</factor>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav1-MHz</tooltip-id>
+				<label>Adjust NAV1 MHz</label>
+			</binding>
+		</hovered>
+	</animation>
+	
+</PropertyList>

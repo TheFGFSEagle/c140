@@ -10,11 +10,15 @@
 				<description>Initial version (3D, FDM, Nasal, Systems)</description>
 			</author>
 			<author>
+				<name>TheEagle</name> <!-- needed to show up on the splash screen -->
 				<nick>TheEagle</nick>
 				<email>thefgfseagle@gmail.com</email>
 				<description>3D, Nasal, Systems, GUI</description>
 			</author>
 		</authors>
+		<equipment>
+			<nav-radio type="bool">true</nav-radio>
+		</equipment>
 		<checklists include="c140-checklists.xml"/>
 		<menubar>
 			<default>
@@ -39,6 +43,7 @@
 		</menubar>
 		<model>
 			<path>Models/c140.xml</path>
+			<show-yoke type="bool">true</show-yoke>
 			<livery>
 				<reflection-correction type="double">-0.7</reflection-correction>
 				<ambient-correction type="double">0.15</ambient-correction>
@@ -109,7 +114,16 @@
 			<electrical>
 				<path></path> <!-- Disable generic XML electrical system -->
 			</electrical>
+			<property-rule n="100">
+				<path>Models/Instruments/ki206/ki206-property-rules.xml</path>
+			</property-rule>
+			<property-rule n="101">
+				<path>Models/Instruments/tsi-5550/tsi-5550-property-rules.xml</path>
+			</property-rule>
 		</systems>
+		<aircraft-data>
+			<path>/sim/equipment/nav-radio</path>
+		</aircraft-data>
 	</sim>
 	<c140>
 		<sound>
@@ -167,9 +181,22 @@
 			<carb_ice type="double">0.0</carb_ice>
 		</engine>
 	</engines>
+	<input>
+		<keyboard n="0">
+			<key n="121">
+				<name>y</name>
+				<desc>Show/hide yokes</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/show-yoke</property>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
 	<instrumentation>
 		<comm n="0">
 			<channel-mode-selector type="int">0</channel-mode-selector>
+			<dimming-norm type="float">0.0</dimming-norm>
 		</comm>
 	</instrumentation>
 	<payload>

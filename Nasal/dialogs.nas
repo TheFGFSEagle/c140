@@ -10,6 +10,7 @@ dialogs.AircraftConfigurationDialog = {
 			equipmentNode: props.globals.getNode("sim/equipment"),
 		};
 		obj.astrotechLC2Node = obj.equipmentNode.getNode("astrotech-lc2", 1);
+		obj.navRadioNode = obj.equipmentNode.getNode("nav-radio", 1);
 		
 		obj.canvas = obj.window.getCanvas(create: 1).set("background", canvas.style.getColor("bg_color"));
 		obj.root = obj.canvas.createGroup();
@@ -28,6 +29,12 @@ dialogs.AircraftConfigurationDialog = {
 		)
 						.setText("Astrotech LC-2 digital clock:");
 		obj.equipmentTab.addItem(obj.astrotechLC2Checkbox);
+		
+		obj.navRadioCheckbox = canvas.gui.widgets.PropertyCheckBox.new(
+			obj.tabsContent, canvas.style, {"node": obj.navRadioNode, "label-position": "left"}
+		)
+						.setText("NAV Radio:");
+		obj.equipmentTab.addItem(obj.navRadioCheckbox);
 		return obj;
 	},
 	

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!--	References:
+			https://mitchellproducts.com/product/tachometers-mechanical-recording-2-1-4-inch/
+			https://mitchellproducts.com/wp-content/uploads/2018/06/Mechanical-Tachometer-Specifications-TACH10003.pdf
+-->
+
+<PropertyList>
+	
+	<path>tach.ac</path>
+	
+	<params>
+		<rpm>engines/engine[0]/rpm</rpm>
+		<hobbs>sim/time/hobbs/engine[0]</hobbs>
+	</params>
+	
+	<effect>
+		<inherits-from>Aircraft/c140/Models/Effects/interior/flashlight</inherits-from>
+		<object-name>tach</object-name>
+		<object-name>tach.needle</object-name>  
+		<object-name>tach.hobbs.1000</object-name>
+		<object-name>tach.hobbs.100</object-name>
+		<object-name>tach.hobbs.10</object-name>
+		<object-name>tach.hobbs.1</object-name>
+		<object-name>tach.hobbs.01</object-name>
+	</effect>
+	
+	<animation>
+		<type>material</type>
+		<object-name>tach</object-name>
+		<object-name>tach.needle</object-name>  
+		<object-name>tach.hobbs.1000</object-name>
+		<object-name>tach.hobbs.100</object-name>
+		<object-name>tach.hobbs.10</object-name>
+		<object-name>tach.hobbs.1</object-name>
+		<object-name>tach.hobbs.01</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.2</green>
+			<blue>0.0</blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	
+	<animation> 
+		<type>rotate</type>
+		<object-name>tach.needle</object-name>
+		<property alias="/params/rpm" />
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>500</ind><dep>11</dep></entry>
+			<entry><ind>3000</ind><dep>219</dep></entry>
+			<entry><ind>3300</ind><dep>244.2</dep></entry>
+		</interpolation>
+		<axis> 
+			<x>-1</x>
+		</axis>
+	</animation>         
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>tach.hobbs.1000</object-name>
+		<property alias="/params/hobbs" />
+		<factor>-0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tach.hobbs.100</object-name>
+		<property alias="/params/hobbs" />
+		<factor>-0.001</factor>
+		<step>100</step>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tach.hobbs.10</object-name>
+		<property alias="/params/hobbs" />
+		<factor>-0.01</factor>
+		<step>10</step>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tach.hobbs.1</object-name>
+		<property alias="/params/hobbs" />
+		<factor>-0.1</factor>
+		<step>1</step>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tach.hobbs.01</object-name>
+		<property alias="/params/hobbs" />
+		<factor>-1</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+</PropertyList>

@@ -63,7 +63,23 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/rpm/rpm.xml</path>
+		<path>Instruments/rpm-80mm/tach.xml</path>
+		<condition>
+			<not>
+				<property>sim/equipment/nav-radio</property>
+			</not>
+		</condition>
+		<offsets>
+			<x-m>-1.86</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.186422</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/ki206/ki206.xml</path>
+		<condition>
+			<property>sim/equipment/nav-radio</property>
+		</condition>
 		<offsets>
 			<x-m>-1.86</x-m>
 			<y-m>0.0</y-m>
@@ -96,7 +112,23 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/tc/tc.xml</path>
+		<path>Instruments/tsi-5550/tsi-5550.xml</path>
+		<condition>
+			<not>
+				<property>sim/equipment/nav-radio</property>
+			</not>
+		</condition>
+		<offsets>
+			<x-m>-1.85344</x-m>
+			<y-m>-0.329168</y-m>
+			<z-m>0.201207</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/rpm-57mm/tach.xml</path>
+		<condition>
+			<property>sim/equipment/nav-radio</property>
+		</condition>
 		<offsets>
 			<x-m>-1.85344</x-m>
 			<y-m>-0.329168</y-m>
@@ -172,7 +204,25 @@
 	</model>
 	<!-- Radio Stack -->
 	<model>
-		<path>Instruments/kx165/kx165-1.xml</path>
+		<name>kx170b</name>
+		<path>Instruments/kx170b/kx170b.xml</path>
+		<condition>
+			<property>sim/equipment/nav-radio</property>
+		</condition>
+		<offsets>
+			<x-m>-1.85</x-m>
+			<y-m>-0.386616</y-m>
+			<z-m>0.091783</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>ky96a</name>
+		<path>Instruments/ky96a/ky96a.xml</path>
+		<condition>
+			<not>
+				<property>sim/equipment/nav-radio</property>
+			</not>
+		</condition>
 		<offsets>
 			<x-m>-1.85</x-m>
 			<y-m>-0.386616</y-m>
@@ -522,6 +572,14 @@
 	</animation>
 	
 	<!-- Yoke -->
+	<animation>
+		<type>select</type>
+		<object-name>yoke.L</object-name>
+		<object-name>yoke.R</object-name>
+		<condition>
+			<property>sim/model/show-yoke</property>
+		</condition>
+	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>yoke.L</object-name>

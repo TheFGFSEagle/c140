@@ -6,6 +6,7 @@
 
 # Reference: https://n140tw.blogspot.com/2014/03/electrical-loads-wiring.html and Flight Manual, especially Figure 19: Electrical Wiring Diagram
 
+var nav_equipped = props.globals.getNode("/sim/equipment/nav-radio", 1);
 
 ##
 # Initialize internal values
@@ -312,9 +313,28 @@ var electrical_bus_1 = func() {
 	# Radio
 	if ( getprop("/controls/circuit-breakers/radio") ) {
 		setprop("/systems/electrical/outputs/comm[0]", bus_volts);
+		if( bus_volts > 9 ){ 
+			setprop("/instrumentation/comm[0]/serviceable", 1 );
+		} else {
+			setprop("/instrumentation/comm[0]/serviceable", 0 );
+		}
 		load += bus_volts / 57;
+		if( nav_equipped.getBoolValue() ){
+			setprop("/systems/electrical/outputs/nav[0]", bus_volts);
+			if( bus_volts > 9 ){ 
+				setprop("/instrumentation/nav[0]/serviceable", 1 );
+			} else {
+				setprop("/instrumentation/nav[0]/serviceable", 0 );
+			}
+		} else {
+			setprop("/systems/electrical/outputs/nav[0]", 0.0);
+			setprop("/instrumentation/nav[0]/serviceable", 0 );
+		}
 	} else {
 		setprop("/systems/electrical/outputs/comm[0]", 0.0);
+		setprop("/instrumentation/comm[0]/serviceable", 0 );
+		setprop("/systems/electrical/outputs/nav[0]", 0.0);
+		setprop("/instrumentation/nav[0]/serviceable", 0 );
 	}
 
 	# Landing Light Motors
@@ -386,6 +406,7 @@ var inst_nav_bus_1 = func() {
 	# Navigation and Instrument Lights
 	if ( getprop("/controls/switches/nav-lights") ) {
 		setprop("/systems/electrical/outputs/instrument-lights", bus_volts);
+		setprop("/instrumentation/comm[0]/dimming-norm", 0.5 );
 		setprop("/systems/electrical/outputs/nav-lights", bus_volts);
 		if( bus_volts > 10 ) {
 			setprop("/systems/electrical/outputs/nav-lights-norm", 1.0);
@@ -399,6 +420,7 @@ var inst_nav_bus_1 = func() {
 		props.globals.setBoolValue("/instrumentation/clock/powered", 1);
 	} else {
 		setprop("/systems/electrical/outputs/instrument-lights", 0.0);
+		setprop("/instrumentation/comm[0]/dimming-norm", 0.0 );
 		setprop("/systems/electrical/outputs/nav-lights", 0.0);
 		setprop("/systems/electrical/outputs/nav-lights-norm", 0.0);
 		props.globals.setBoolValue("/instrumentation/clock/powered", 1);

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<filter>
+		<type>noise-spike</type>
+		<max-rate-of-change>3</max-rate-of-change>
+		<input>
+			<condition>
+				<property>instrumentation/nav/in-range</property>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>
+			<value>0</value>
+		</input>
+		<output>/instrumentation/ki206/nav-flag</output>
+	</filter>
+
+	<filter>
+		<type>noise-spike</type>
+		<max-rate-of-change>3</max-rate-of-change>
+		<input>
+			<condition>
+				<property>instrumentation/nav/has-gs</property>
+				<property>instrumentation/nav/gs-in-range</property>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>
+			<value>0</value>
+		</input>
+		<output>/instrumentation/ki206/gs-flag</output>
+	</filter>
+
+	<filter>
+		<type>noise-spike</type>
+		<max-rate-of-change>3</max-rate-of-change>
+		<input>
+			<condition>
+				<property>instrumentation/nav/in-range</property>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+				<property>instrumentation/nav/to-flag</property>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>
+			<condition>
+				<property>instrumentation/nav/in-range</property>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+				<property>instrumentation/nav/from-flag</property>
+			</condition>
+			<value>-1</value>
+		</input>
+		<input>
+			<value>0</value>
+		</input>
+		<output>/instrumentation/ki206/tofrom-flag</output>
+	</filter>
+
+	<filter>
+		<name>NAV0 heading deflection</name>
+		<type>exponential</type>
+		<filter-time>0.3</filter-time>
+		<input>
+			<condition>
+				<property>instrumentation/nav/in-range</property>
+				<not><property>instrumentation/nav/nav-loc</property></not>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+			</condition>
+			<expression>
+				<product>
+					<property>instrumentation/nav/heading-needle-deflection</property>
+					<value>0.10</value>
+				</product>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<property>instrumentation/nav/in-range</property>
+				<property>instrumentation/nav/nav-loc</property>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+			</condition>
+			<expression>
+				<product>
+					<property>instrumentation/nav/heading-needle-deflection</property>
+					<value>0.25</value>
+				</product>
+			</expression>
+		</input>
+		<input>
+			<value>0</value>
+		</input>
+		<output>/instrumentation/ki206/heading-needle-deflection-norm</output>
+		<min>-1</min>
+		<max> 1</max>
+	</filter>
+
+	<filter>
+		<name>NAV0 glideslope deflection</name>
+		<type>exponential</type>
+		<filter-time>0.3</filter-time>
+		<input>
+			<condition>
+				<property>instrumentation/nav/has-gs</property>
+				<property>instrumentation/nav/gs-in-range</property>
+				<greater-than>
+					<property>systems/electrical/outputs/nav</property>
+					<value>9.0</value>
+				</greater-than>
+			</condition>
+			<expression>
+				<product>
+					<property>instrumentation/nav/gs-needle-deflection</property>
+					<value>0.5</value>
+				</product>
+			</expression>
+		</input>
+		<input>
+			<value>0</value>
+		</input>
+		<output>/instrumentation/ki206/gs-needle-deflection-norm</output>
+		<min>-1</min>
+		<max> 1</max>
+	</filter>
+
+
+</PropertyList>

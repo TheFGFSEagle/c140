@@ -91,16 +91,6 @@
 	<propulsion>
 		
 		<engine file="C-85">
-			<location unit="M">
-				<x>  -2.93 </x>
-				<y>   0.00 </y>
-				<z>   0.00 </z>
-			</location>
-			<orient unit="DEG">
-				<pitch>     0.00 </pitch>
-				<roll>     0.00 </roll>
-				<yaw>     0.00 </yaw>
-			</orient>
 			<feed> 2 </feed> <!-- fed by fuel strainer -->
 			<thruster file="McCauley-1A90-CF7148">
 				<sense> 1 </sense>

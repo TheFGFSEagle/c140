@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<!--
+        Bendix/King KY96A COM radio
+
+        Created by Torsten Dreyer, October 2008 (KX165)
+	  Adapted to KY96A Bea Wolf, November 2023
+
+        You might want to use the following code in your aircraft's nasal
+        init function to keep the settings of the radio persistent between
+        flightgear sessions
+
+        aircraft.data.add(
+        "instrumentation/comm[0]/volume-selected",
+        "instrumentation/comm[0]/frequencies/selected-mhz",
+        "instrumentation/comm[0]/frequencies/standby-mhz",
+        "instrumentation/comm[0]/frequencies/dial-khz",
+        "instrumentation/comm[0]/frequencies/dial-mhz",
+        "instrumentation/comm[0]/test-btn",
+        );
+    -->
+	<params>
+		<comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
+		<power-comm>instrumentation/comm[0]/power-btn</power-comm>
+		<comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
+		<comm-frq-standby>instrumentation/comm[0]/frequencies/standby-mhz</comm-frq-standby>
+		<comm-frq-swp>instrumentation/comm[0]/frq-swap-btn</comm-frq-swp>
+		<comm-power-knob>instrumentation/comm[0]/power-knob</comm-power-knob>
+		<comm-dial-khz>instrumentation/comm[0]/frequencies/dial-khz</comm-dial-khz>
+		<comm-dial-mhz>instrumentation/comm[0]/frequencies/dial-mhz</comm-dial-mhz>
+		<comm-volume>instrumentation/comm[0]/volume-selected</comm-volume>
+		<comm-test>instrumentation/comm[0]/test-btn</comm-test>
+		<channel-mode-selector>instrumentation/comm[0]/channel-mode-selector</channel-mode-selector>
+		<dim-norm>instrumentation/comm[0]/dimming-norm</dim-norm>
+		<comm-operable>instrumentation/comm[0]/operable</comm-operable>
+	</params>
+	<path>ky96a.ac</path>
+	
+	<!-- Select illuminated/non-illuminated texture -->
+	<animation>
+		<type>select</type>
+		<object-name>ky96a.screen_bg.norm</object-name>
+		<object-name>ky96a.swap_btn.norm</object-name>
+		<object-name>ky96a.chan_btn.norm</object-name>
+		<object-name>ky96a.use.100</object-name>
+		<object-name>ky96a.use.10</object-name>
+		<object-name>ky96a.use.1</object-name>
+		<object-name>ky96a.use.01</object-name>
+		<object-name>ky96a.use.001</object-name>
+		<object-name>ky96a.stby.100</object-name>
+		<object-name>ky96a.stby.10</object-name>
+		<object-name>ky96a.stby.1</object-name>
+		<object-name>ky96a.stby.01</object-name>
+		<object-name>ky96a.stby.001</object-name>
+		<object-name>ky96a.screen</object-name>
+		<object-name>ky96a.screen.tx</object-name>
+		<object-name>ky96a.screen.pg</object-name>
+		<object-name>ky96a.screen.ch_flag</object-name>
+		<object-name>ky96a.screen.ch_num</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property alias="/params/dim-norm" />
+					<value>0</value>
+				</equals>
+				<not>
+					<property alias="/params/comm-operable" />
+				</not>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ky96a.screen_bg.illum</object-name>
+		<object-name>ky96a.swap_btn.illum</object-name>
+		<object-name>ky96a.chan_btn.illum</object-name>
+		<object-name>ky96a.use.100.illum</object-name>
+		<object-name>ky96a.use.10.illum</object-name>
+		<object-name>ky96a.use.1.illum</object-name>
+		<object-name>ky96a.use.01.illum</object-name>
+		<object-name>ky96a.use.001.illum</object-name>
+		<object-name>ky96a.stby.100.illum</object-name>
+		<object-name>ky96a.stby.10.illum</object-name>
+		<object-name>ky96a.stby.1.illum</object-name>
+		<object-name>ky96a.stby.01.illum</object-name>
+		<object-name>ky96a.stby.001.illum</object-name>
+		<object-name>ky96a.screen.illum</object-name>
+		<object-name>ky96a.screen.tx.illum</object-name>
+		<object-name>ky96a.screen.pg.illum</object-name>
+		<object-name>ky96a.screen.ch_flag.illum</object-name>
+		<object-name>ky96a.screen.ch_num.illum</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property alias="/params/dim-norm" />
+					<value>0</value>
+				</greater-than>
+				<property alias="/params/comm-operable" />
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ky96a.use.100</object-name>
+		<object-name>ky96a.use.10</object-name>
+		<object-name>ky96a.use.1</object-name>
+		<object-name>ky96a.use.01</object-name>
+		<object-name>ky96a.use.001</object-name>
+		<object-name>ky96a.stby.100</object-name>
+		<object-name>ky96a.stby.10</object-name>
+		<object-name>ky96a.stby.1</object-name>
+		<object-name>ky96a.stby.01</object-name>
+		<object-name>ky96a.stby.001</object-name>
+		<object-name>ky96a.screen</object-name>
+		<object-name>ky96a.screen.tx</object-name>
+		<object-name>ky96a.screen.pg</object-name>
+		<object-name>ky96a.screen.ch_flag</object-name>
+		<object-name>ky96a.screen.ch_num</object-name>
+		<object-name>ky96a.use.100.illum</object-name>
+		<object-name>ky96a.use.10.illum</object-name>
+		<object-name>ky96a.use.1.illum</object-name>
+		<object-name>ky96a.use.01.illum</object-name>
+		<object-name>ky96a.use.001.illum</object-name>
+		<object-name>ky96a.stby.100.illum</object-name>
+		<object-name>ky96a.stby.10.illum</object-name>
+		<object-name>ky96a.stby.1.illum</object-name>
+		<object-name>ky96a.stby.01.illum</object-name>
+		<object-name>ky96a.stby.001.illum</object-name>
+		<object-name>ky96a.screen.illum</object-name>
+		<object-name>ky96a.screen.tx.illum</object-name>
+		<object-name>ky96a.screen.pg.illum</object-name>
+		<object-name>ky96a.screen.ch_flag.illum</object-name>
+		<object-name>ky96a.screen.ch_num.illum</object-name>
+		<condition>
+			<property alias="/params/comm-operable" />
+		</condition>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>ky96a.screen_bg.illum</object-name>
+		<object-name>ky96a.swap_btn.illum</object-name>
+		<object-name>ky96a.chan_btn.illum</object-name>
+		<object-name>ky96a.use.100.illum</object-name>
+		<object-name>ky96a.use.10.illum</object-name>
+		<object-name>ky96a.use.1.illum</object-name>
+		<object-name>ky96a.use.01.illum</object-name>
+		<object-name>ky96a.use.001.illum</object-name>
+		<object-name>ky96a.stby.100.illum</object-name>
+		<object-name>ky96a.stby.10.illum</object-name>
+		<object-name>ky96a.stby.1.illum</object-name>
+		<object-name>ky96a.stby.01.illum</object-name>
+		<object-name>ky96a.stby.001.illum</object-name>
+		<object-name>ky96a.screen.illum</object-name>
+		<object-name>ky96a.screen.tx.illum</object-name>
+		<object-name>ky96a.screen.pg.illum</object-name>
+		<object-name>ky96a.screen.ch_flag.illum</object-name>
+		<object-name>ky96a.screen.ch_num.illum</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+			<factor-prop alias="/params/dim-norm" />
+		</emission>
+	</animation>
+	
+	<!--	Display -->
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.use.10</object-name>
+		<object-name>ky96a.use.10.illum</object-name>
+		<property alias="/params/comm-frq-selected" />
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.use.1</object-name>
+		<object-name>ky96a.use.1.illum</object-name>
+		<property alias="/params/comm-frq-selected" />
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.use.01</object-name>
+		<object-name>ky96a.use.01.illum</object-name>
+		<property alias="/params/comm-frq-selected" />
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.use.001</object-name>
+		<object-name>ky96a.use.001.illum</object-name>
+		<property alias="/params/comm-frq-selected" />
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.stby.10</object-name>
+		<object-name>ky96a.stby.10.illum</object-name>
+		<property alias="/params/comm-frq-standby" />
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.stby.1</object-name>
+		<object-name>ky96a.stby.1.illum</object-name>
+		<property alias="/params/comm-frq-standby" />
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.stby.01</object-name>
+		<object-name>ky96a.stby.01.illum</object-name>
+		<property alias="/params/comm-frq-standby" />
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ky96a.stby.001</object-name>
+		<object-name>ky96a.stby.001.illum</object-name>
+		<property alias="/params/comm-frq-standby" />
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+	
+	<!-- Knobs -->
+	<animation>
+		<type>knob</type>
+		<object-name>ky96a.vol_knob</object-name>
+		<property alias="/params/comm-volume"/>
+		<factor>-270</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.0365</y-m>
+			<z-m>-0.0057</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-volume"/>
+				<factor>0.05</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property alias="/params/power-comm"/>
+				<value>1</value>
+				<condition>
+					<greater-than>
+						<property alias="/params/comm-volume"/>
+						<value>0</value>
+					</greater-than>
+				</condition>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property alias="/params/power-comm"/>
+				<value>0</value>
+				<condition>
+					<equals>
+						<property alias="/params/comm-volume"/>
+						<value>0</value>
+					</equals>
+				</condition>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-vol</tooltip-id>
+				<label>COMM1 Volume: %3d%%</label>
+				<property alias="/params/comm-volume"/>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>ky96a.khz_knob</object-name>
+		<property alias="/params/comm-dial-khz"/>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.061</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-dial-khz"/>
+				<factor>4</factor>
+				<min>0</min>
+				<max>1440</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-frq-standby" />
+				<factor>0.025</factor>
+				<min>0.0</min>
+				<max>1.0</max>
+				<resolution>0.025</resolution>
+				<wrap>true</wrap>
+				<mask>decimal</mask>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-kHz</tooltip-id>
+				<label>Adjust COM1 kHz</label>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>ky96a.mhz_knob</object-name>
+		<property alias="/params/comm-dial-mhz"/>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+		<center>
+			<y-m> 0.061</y-m>
+			<z-m> 0.001</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-frq-standby" />
+				<factor>1</factor>
+				<min>118</min>
+				<max>136</max>
+				<wrap>true</wrap>
+				<mask>integer</mask>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="/params/comm-dial-mhz"/>
+				<factor>4</factor>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-MHz</tooltip-id>
+				<label>Adjust COM1 MHz</label>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ky96a.swap_btn.norm</object-name>
+		<object-name>ky96a.swap_btn.illum</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="/params/comm-frq-swp"/>
+				<value type="int">1</value>
+			</binding>
+			<binding>
+				<command>property-swap</command>
+				<property alias="/params/comm-frq-selected"/>
+				<property alias="/params/comm-frq-standby"/>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property alias="/params/comm-frq-swp"/>
+					<value type="int">0</value>
+				</binding>
+			</mod-up>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>comm1-toggle</tooltip-id>
+				<label>Swap COM1 frequencies</label>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>ky96a.swap_btn.norm</object-name>
+		<object-name>ky96a.swap_btn.illum</object-name>
+		<property alias="../../params/comm-frq-swp"/>
+		<factor>-0.003</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+	
+</PropertyList>
