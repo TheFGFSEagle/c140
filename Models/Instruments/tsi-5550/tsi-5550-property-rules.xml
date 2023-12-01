@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<!-- Turn-Slip-Indicator OFF-Flag -->
+	<!-- ref. https://www.mcico.com/Assets/products/TechnicalDrawings/5550-8340N3LrevF_td.pdf: 10.6 - 11.6 VDC -->
+	<filter>
+		<type>noise-spike</type>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/electrical/outputs/turn-indicator</property>
+					<value>11.6</value>
+				</greater-than-equals>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>1.0</input>
+		<max-rate-of-change>2.0</max-rate-of-change>
+		<output>/instrumentation/turn-indicator/off-flag-pos</output>
+	</filter> 
+</PropertyList>

@@ -216,8 +216,8 @@
 		</offsets>
 	</model>
 	<model>
-		<name>ky96a</name>
-		<path>Instruments/ky96a/ky96a.xml</path>
+		<name>ky97a</name>
+		<path>Instruments/ky97a/ky97a.xml</path>
 		<condition>
 			<not>
 				<property>sim/equipment/nav-radio</property>

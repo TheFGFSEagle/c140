@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
 	<!--
-        Bendix/King KY96A COM radio
+        Bendix/King KY97A COM radio
 
         Created by Torsten Dreyer, October 2008 (KX165)
-	  Adapted to KY96A Bea Wolf, November 2023
+	  Adapted to KY97A Bea Wolf, November 2023
 
         You might want to use the following code in your aircraft's nasal
         init function to keep the settings of the radio persistent between
@@ -34,29 +34,29 @@
 		<dim-norm>instrumentation/comm[0]/dimming-norm</dim-norm>
 		<comm-operable>instrumentation/comm[0]/operable</comm-operable>
 	</params>
-	<path>ky96a.ac</path>
+	<path>ky97a.ac</path>
 	
 	<!-- Select illuminated/non-illuminated texture -->
 	<animation>
 		<type>select</type>
-		<object-name>ky96a.screen_bg.norm</object-name>
-		<object-name>ky96a.swap_btn.norm</object-name>
-		<object-name>ky96a.chan_btn.norm</object-name>
-		<object-name>ky96a.use.100</object-name>
-		<object-name>ky96a.use.10</object-name>
-		<object-name>ky96a.use.1</object-name>
-		<object-name>ky96a.use.01</object-name>
-		<object-name>ky96a.use.001</object-name>
-		<object-name>ky96a.stby.100</object-name>
-		<object-name>ky96a.stby.10</object-name>
-		<object-name>ky96a.stby.1</object-name>
-		<object-name>ky96a.stby.01</object-name>
-		<object-name>ky96a.stby.001</object-name>
-		<object-name>ky96a.screen</object-name>
-		<object-name>ky96a.screen.tx</object-name>
-		<object-name>ky96a.screen.pg</object-name>
-		<object-name>ky96a.screen.ch_flag</object-name>
-		<object-name>ky96a.screen.ch_num</object-name>
+		<object-name>ky97a.screen_bg.norm</object-name>
+		<object-name>ky97a.swap_btn.norm</object-name>
+		<object-name>ky97a.chan_btn.norm</object-name>
+		<object-name>ky97a.use.100</object-name>
+		<object-name>ky97a.use.10</object-name>
+		<object-name>ky97a.use.1</object-name>
+		<object-name>ky97a.use.01</object-name>
+		<object-name>ky97a.use.001</object-name>
+		<object-name>ky97a.stby.100</object-name>
+		<object-name>ky97a.stby.10</object-name>
+		<object-name>ky97a.stby.1</object-name>
+		<object-name>ky97a.stby.01</object-name>
+		<object-name>ky97a.stby.001</object-name>
+		<object-name>ky97a.screen</object-name>
+		<object-name>ky97a.screen.tx</object-name>
+		<object-name>ky97a.screen.pg</object-name>
+		<object-name>ky97a.screen.ch_flag</object-name>
+		<object-name>ky97a.screen.ch_num</object-name>
 		<condition>
 			<or>
 				<equals>
@@ -71,24 +71,24 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<object-name>ky96a.screen_bg.illum</object-name>
-		<object-name>ky96a.swap_btn.illum</object-name>
-		<object-name>ky96a.chan_btn.illum</object-name>
-		<object-name>ky96a.use.100.illum</object-name>
-		<object-name>ky96a.use.10.illum</object-name>
-		<object-name>ky96a.use.1.illum</object-name>
-		<object-name>ky96a.use.01.illum</object-name>
-		<object-name>ky96a.use.001.illum</object-name>
-		<object-name>ky96a.stby.100.illum</object-name>
-		<object-name>ky96a.stby.10.illum</object-name>
-		<object-name>ky96a.stby.1.illum</object-name>
-		<object-name>ky96a.stby.01.illum</object-name>
-		<object-name>ky96a.stby.001.illum</object-name>
-		<object-name>ky96a.screen.illum</object-name>
-		<object-name>ky96a.screen.tx.illum</object-name>
-		<object-name>ky96a.screen.pg.illum</object-name>
-		<object-name>ky96a.screen.ch_flag.illum</object-name>
-		<object-name>ky96a.screen.ch_num.illum</object-name>
+		<object-name>ky97a.screen_bg.illum</object-name>
+		<object-name>ky97a.swap_btn.illum</object-name>
+		<object-name>ky97a.chan_btn.illum</object-name>
+		<object-name>ky97a.use.100.illum</object-name>
+		<object-name>ky97a.use.10.illum</object-name>
+		<object-name>ky97a.use.1.illum</object-name>
+		<object-name>ky97a.use.01.illum</object-name>
+		<object-name>ky97a.use.001.illum</object-name>
+		<object-name>ky97a.stby.100.illum</object-name>
+		<object-name>ky97a.stby.10.illum</object-name>
+		<object-name>ky97a.stby.1.illum</object-name>
+		<object-name>ky97a.stby.01.illum</object-name>
+		<object-name>ky97a.stby.001.illum</object-name>
+		<object-name>ky97a.screen.illum</object-name>
+		<object-name>ky97a.screen.tx.illum</object-name>
+		<object-name>ky97a.screen.pg.illum</object-name>
+		<object-name>ky97a.screen.ch_flag.illum</object-name>
+		<object-name>ky97a.screen.ch_num.illum</object-name>
 		<condition>
 			<and>
 				<greater-than>
@@ -101,60 +101,60 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<object-name>ky96a.use.100</object-name>
-		<object-name>ky96a.use.10</object-name>
-		<object-name>ky96a.use.1</object-name>
-		<object-name>ky96a.use.01</object-name>
-		<object-name>ky96a.use.001</object-name>
-		<object-name>ky96a.stby.100</object-name>
-		<object-name>ky96a.stby.10</object-name>
-		<object-name>ky96a.stby.1</object-name>
-		<object-name>ky96a.stby.01</object-name>
-		<object-name>ky96a.stby.001</object-name>
-		<object-name>ky96a.screen</object-name>
-		<object-name>ky96a.screen.tx</object-name>
-		<object-name>ky96a.screen.pg</object-name>
-		<object-name>ky96a.screen.ch_flag</object-name>
-		<object-name>ky96a.screen.ch_num</object-name>
-		<object-name>ky96a.use.100.illum</object-name>
-		<object-name>ky96a.use.10.illum</object-name>
-		<object-name>ky96a.use.1.illum</object-name>
-		<object-name>ky96a.use.01.illum</object-name>
-		<object-name>ky96a.use.001.illum</object-name>
-		<object-name>ky96a.stby.100.illum</object-name>
-		<object-name>ky96a.stby.10.illum</object-name>
-		<object-name>ky96a.stby.1.illum</object-name>
-		<object-name>ky96a.stby.01.illum</object-name>
-		<object-name>ky96a.stby.001.illum</object-name>
-		<object-name>ky96a.screen.illum</object-name>
-		<object-name>ky96a.screen.tx.illum</object-name>
-		<object-name>ky96a.screen.pg.illum</object-name>
-		<object-name>ky96a.screen.ch_flag.illum</object-name>
-		<object-name>ky96a.screen.ch_num.illum</object-name>
+		<object-name>ky97a.use.100</object-name>
+		<object-name>ky97a.use.10</object-name>
+		<object-name>ky97a.use.1</object-name>
+		<object-name>ky97a.use.01</object-name>
+		<object-name>ky97a.use.001</object-name>
+		<object-name>ky97a.stby.100</object-name>
+		<object-name>ky97a.stby.10</object-name>
+		<object-name>ky97a.stby.1</object-name>
+		<object-name>ky97a.stby.01</object-name>
+		<object-name>ky97a.stby.001</object-name>
+		<object-name>ky97a.screen</object-name>
+		<object-name>ky97a.screen.tx</object-name>
+		<object-name>ky97a.screen.pg</object-name>
+		<object-name>ky97a.screen.ch_flag</object-name>
+		<object-name>ky97a.screen.ch_num</object-name>
+		<object-name>ky97a.use.100.illum</object-name>
+		<object-name>ky97a.use.10.illum</object-name>
+		<object-name>ky97a.use.1.illum</object-name>
+		<object-name>ky97a.use.01.illum</object-name>
+		<object-name>ky97a.use.001.illum</object-name>
+		<object-name>ky97a.stby.100.illum</object-name>
+		<object-name>ky97a.stby.10.illum</object-name>
+		<object-name>ky97a.stby.1.illum</object-name>
+		<object-name>ky97a.stby.01.illum</object-name>
+		<object-name>ky97a.stby.001.illum</object-name>
+		<object-name>ky97a.screen.illum</object-name>
+		<object-name>ky97a.screen.tx.illum</object-name>
+		<object-name>ky97a.screen.pg.illum</object-name>
+		<object-name>ky97a.screen.ch_flag.illum</object-name>
+		<object-name>ky97a.screen.ch_num.illum</object-name>
 		<condition>
 			<property alias="/params/comm-operable" />
 		</condition>
 	</animation>
 	<animation>
 		<type>material</type>
-		<object-name>ky96a.screen_bg.illum</object-name>
-		<object-name>ky96a.swap_btn.illum</object-name>
-		<object-name>ky96a.chan_btn.illum</object-name>
-		<object-name>ky96a.use.100.illum</object-name>
-		<object-name>ky96a.use.10.illum</object-name>
-		<object-name>ky96a.use.1.illum</object-name>
-		<object-name>ky96a.use.01.illum</object-name>
-		<object-name>ky96a.use.001.illum</object-name>
-		<object-name>ky96a.stby.100.illum</object-name>
-		<object-name>ky96a.stby.10.illum</object-name>
-		<object-name>ky96a.stby.1.illum</object-name>
-		<object-name>ky96a.stby.01.illum</object-name>
-		<object-name>ky96a.stby.001.illum</object-name>
-		<object-name>ky96a.screen.illum</object-name>
-		<object-name>ky96a.screen.tx.illum</object-name>
-		<object-name>ky96a.screen.pg.illum</object-name>
-		<object-name>ky96a.screen.ch_flag.illum</object-name>
-		<object-name>ky96a.screen.ch_num.illum</object-name>
+		<object-name>ky97a.screen_bg.illum</object-name>
+		<object-name>ky97a.swap_btn.illum</object-name>
+		<object-name>ky97a.chan_btn.illum</object-name>
+		<object-name>ky97a.use.100.illum</object-name>
+		<object-name>ky97a.use.10.illum</object-name>
+		<object-name>ky97a.use.1.illum</object-name>
+		<object-name>ky97a.use.01.illum</object-name>
+		<object-name>ky97a.use.001.illum</object-name>
+		<object-name>ky97a.stby.100.illum</object-name>
+		<object-name>ky97a.stby.10.illum</object-name>
+		<object-name>ky97a.stby.1.illum</object-name>
+		<object-name>ky97a.stby.01.illum</object-name>
+		<object-name>ky97a.stby.001.illum</object-name>
+		<object-name>ky97a.screen.illum</object-name>
+		<object-name>ky97a.screen.tx.illum</object-name>
+		<object-name>ky97a.screen.pg.illum</object-name>
+		<object-name>ky97a.screen.ch_flag.illum</object-name>
+		<object-name>ky97a.screen.ch_num.illum</object-name>
 		<emission>
 			<red>1.0</red>
 			<green>1.0</green>
@@ -166,8 +166,8 @@
 	<!--	Display -->
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.use.10</object-name>
-		<object-name>ky96a.use.10.illum</object-name>
+		<object-name>ky97a.use.10</object-name>
+		<object-name>ky97a.use.10.illum</object-name>
 		<property alias="/params/comm-frq-selected" />
 		<factor>0.01</factor>
 		<step>10</step>
@@ -178,8 +178,8 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.use.1</object-name>
-		<object-name>ky96a.use.1.illum</object-name>
+		<object-name>ky97a.use.1</object-name>
+		<object-name>ky97a.use.1.illum</object-name>
 		<property alias="/params/comm-frq-selected" />
 		<factor>0.1</factor>
 		<step>1</step>
@@ -190,8 +190,8 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.use.01</object-name>
-		<object-name>ky96a.use.01.illum</object-name>
+		<object-name>ky97a.use.01</object-name>
+		<object-name>ky97a.use.01.illum</object-name>
 		<property alias="/params/comm-frq-selected" />
 		<factor>1</factor>
 		<step>0.1</step>
@@ -202,8 +202,8 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.use.001</object-name>
-		<object-name>ky96a.use.001.illum</object-name>
+		<object-name>ky97a.use.001</object-name>
+		<object-name>ky97a.use.001.illum</object-name>
 		<property alias="/params/comm-frq-selected" />
 		<factor>10</factor>
 		<step>0.01</step>
@@ -215,8 +215,8 @@
 	
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.stby.10</object-name>
-		<object-name>ky96a.stby.10.illum</object-name>
+		<object-name>ky97a.stby.10</object-name>
+		<object-name>ky97a.stby.10.illum</object-name>
 		<property alias="/params/comm-frq-standby" />
 		<factor>0.01</factor>
 		<step>10</step>
@@ -227,8 +227,8 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.stby.1</object-name>
-		<object-name>ky96a.stby.1.illum</object-name>
+		<object-name>ky97a.stby.1</object-name>
+		<object-name>ky97a.stby.1.illum</object-name>
 		<property alias="/params/comm-frq-standby" />
 		<factor>0.1</factor>
 		<step>1</step>
@@ -239,8 +239,8 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.stby.01</object-name>
-		<object-name>ky96a.stby.01.illum</object-name>
+		<object-name>ky97a.stby.01</object-name>
+		<object-name>ky97a.stby.01.illum</object-name>
 		<property alias="/params/comm-frq-standby" />
 		<factor>1</factor>
 		<step>0.1</step>
@@ -251,8 +251,8 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>ky96a.stby.001</object-name>
-		<object-name>ky96a.stby.001.illum</object-name>
+		<object-name>ky97a.stby.001</object-name>
+		<object-name>ky97a.stby.001.illum</object-name>
 		<property alias="/params/comm-frq-standby" />
 		<factor>10</factor>
 		<step>0.01</step>
@@ -265,7 +265,7 @@
 	<!-- Knobs -->
 	<animation>
 		<type>knob</type>
-		<object-name>ky96a.vol_knob</object-name>
+		<object-name>ky97a.vol_knob</object-name>
 		<property alias="/params/comm-volume"/>
 		<factor>-270</factor>
 		<axis>
@@ -319,7 +319,7 @@
 	</animation>
 	<animation>
 		<type>knob</type>
-		<object-name>ky96a.khz_knob</object-name>
+		<object-name>ky97a.khz_knob</object-name>
 		<property alias="/params/comm-dial-khz"/>
 		<factor>-0.25</factor>
 		<axis>
@@ -359,7 +359,7 @@
 	</animation>
 	<animation>
 		<type>knob</type>
-		<object-name>ky96a.mhz_knob</object-name>
+		<object-name>ky97a.mhz_knob</object-name>
 		<property alias="/params/comm-dial-mhz"/>
 		<factor>-0.25</factor>
 		<axis>
@@ -398,8 +398,8 @@
 	</animation>
 	<animation>
 		<type>pick</type>
-		<object-name>ky96a.swap_btn.norm</object-name>
-		<object-name>ky96a.swap_btn.illum</object-name>
+		<object-name>ky97a.swap_btn.norm</object-name>
+		<object-name>ky97a.swap_btn.illum</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
@@ -431,8 +431,8 @@
 	</animation>
 	<animation>
 		<type>translate</type>
-		<object-name>ky96a.swap_btn.norm</object-name>
-		<object-name>ky96a.swap_btn.illum</object-name>
+		<object-name>ky97a.swap_btn.norm</object-name>
+		<object-name>ky97a.swap_btn.illum</object-name>
 		<property alias="../../params/comm-frq-swp"/>
 		<factor>-0.003</factor>
 		<axis>

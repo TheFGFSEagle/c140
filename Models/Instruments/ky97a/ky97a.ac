@@ -1,15 +1,15 @@
 AC3Db
-MATERIAL "ky96a" rgb 0.800 0.800 0.800  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
-MATERIAL "ky96a.illum" rgb 0.800 0.800 0.800  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "ky97a" rgb 0.800 0.800 0.800  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "ky97a.illum" rgb 0.800 0.800 0.800  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 OBJECT world
-name "Blender_exporter_v4.1__ky96a.ac"
+name "Blender_exporter_v4.1__ky97a.ac"
 kids 39
 OBJECT poly
-name "ky96a"
+name "ky97a"
 data 4
 Cube
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 680
 0.01388 0.01715 -0.08015
 0.01388 -0.01715 -0.08015
@@ -4381,11 +4381,11 @@ refs 34
 327 0.855876 0.093523
 kids 0
 OBJECT poly
-name "ky96a.chan_btn.illum"
+name "ky97a.chan_btn.illum"
 data 8
 Cube.035
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 48
 0.01382 -0.01361 0.00252
 0.01382 -0.01361 0.00118
@@ -4681,11 +4681,11 @@ refs 16
 35 0.741653 0.046934
 kids 0
 OBJECT poly
-name "ky96a.chan_btn.norm"
+name "ky97a.chan_btn.norm"
 data 8
 Cube.001
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 48
 0.01382 -0.01361 0.00252
 0.01382 -0.01361 0.00118
@@ -4981,11 +4981,11 @@ refs 16
 35 0.739826 0.139406
 kids 0
 OBJECT poly
-name "ky96a.khz_knob"
+name "ky97a.khz_knob"
 data 10
 Circle.017
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 704
 0.03887 0.001 -0.06597
 0.03887 0.00149 -0.06595
@@ -9793,11 +9793,11 @@ refs 64
 640 0.712298 0.094602
 kids 0
 OBJECT poly
-name "ky96a.mhz_knob"
+name "ky97a.mhz_knob"
 data 10
 Circle.016
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 384
 0.02851 0.00726 -0.05781
 0.02831 0.00726 -0.05716
@@ -12573,11 +12573,11 @@ refs 4
 371 0.780545 0.039744
 kids 0
 OBJECT poly
-name "ky96a.screen"
+name "ky97a.screen"
 data 8
 Cube.032
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 8
 0.01417 0.00327 0.00666
 0.01417 0.00327 0.00504
@@ -12604,11 +12604,11 @@ refs 4
 5 0.828347 0.132502
 kids 0
 OBJECT poly
-name "ky96a.screen.ch_flag"
+name "ky97a.screen.ch_flag"
 data 8
 Cube.019
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.00994 -0.01239
 0.01417 0.00994 -0.01565
@@ -12624,11 +12624,11 @@ refs 4
 1 0.157176 0.176857
 kids 0
 OBJECT poly
-name "ky96a.screen.ch_flag.illum"
+name "ky97a.screen.ch_flag.illum"
 data 8
 Cube.005
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.00994 -0.01239
 0.01417 0.00994 -0.01565
@@ -12644,11 +12644,11 @@ refs 4
 1 0.322082 0.179782
 kids 0
 OBJECT poly
-name "ky96a.screen.ch_num"
+name "ky97a.screen.ch_num"
 data 8
 Cube.030
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 -0.01635
 0.01417 0.01129 -0.02235
@@ -12664,11 +12664,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.screen.ch_num.illum"
+name "ky97a.screen.ch_num.illum"
 data 8
 Cube.031
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 -0.01635
 0.01417 0.01129 -0.02235
@@ -12684,11 +12684,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.screen.pg"
+name "ky97a.screen.pg"
 data 8
 Cube.018
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.00994 0.02498
 0.01417 0.00994 0.02172
@@ -12704,11 +12704,11 @@ refs 4
 1 0.102157 0.175636
 kids 0
 OBJECT poly
-name "ky96a.screen.pg.illum"
+name "ky97a.screen.pg.illum"
 data 8
 Cube.004
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.00994 0.02498
 0.01417 0.00994 0.02172
@@ -12724,11 +12724,11 @@ refs 4
 1 0.266783 0.176857
 kids 0
 OBJECT poly
-name "ky96a.screen.tx"
+name "ky97a.screen.tx"
 data 8
 Cube.016
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.00994 0.03278
 0.01417 0.00994 0.02952
@@ -12744,11 +12744,11 @@ refs 4
 1 0.047183 0.175636
 kids 0
 OBJECT poly
-name "ky96a.screen.tx.illum"
+name "ky97a.screen.tx.illum"
 data 8
 Cube.003
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.00994 0.03278
 0.01417 0.00994 0.02952
@@ -12764,11 +12764,11 @@ refs 4
 1 0.213038 0.176857
 kids 0
 OBJECT poly
-name "ky96a.screen_bg.illum"
+name "ky97a.screen_bg.illum"
 data 8
 Cube.033
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01387 0.01196 0.06309
 0.01387 0.01196 -0.0267
@@ -12784,11 +12784,11 @@ refs 4
 1 0.757915 0.083654
 kids 0
 OBJECT poly
-name "ky96a.screen_bg.norm"
+name "ky97a.screen_bg.norm"
 data 8
 Cube.002
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01387 0.01196 0.06309
 0.01387 0.01196 -0.0267
@@ -12804,11 +12804,11 @@ refs 4
 1 0.750402 0.174946
 kids 0
 OBJECT poly
-name "ky96a.stby.001"
+name "ky97a.stby.001"
 data 8
 Cube.029
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 -0.00108
 0.01417 0.01129 -0.00678
@@ -12824,11 +12824,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.stby.001.illum"
+name "ky97a.stby.001.illum"
 data 8
 Cube.017
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 -0.00108
 0.01417 0.01129 -0.00678
@@ -12844,11 +12844,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.stby.01"
+name "ky97a.stby.01"
 data 8
 Cube.028
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.00492
 0.01417 0.01129 -0.00078
@@ -12864,11 +12864,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.stby.01.illum"
+name "ky97a.stby.01.illum"
 data 8
 Cube.015
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.00492
 0.01417 0.01129 -0.00078
@@ -12884,11 +12884,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.stby.1"
+name "ky97a.stby.1"
 data 8
 Cube.027
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.01249
 0.01417 0.01129 0.00679
@@ -12904,11 +12904,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.stby.1.illum"
+name "ky97a.stby.1.illum"
 data 8
 Cube.014
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.01249
 0.01417 0.01129 0.00679
@@ -12924,11 +12924,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.stby.10"
+name "ky97a.stby.10"
 data 8
 Cube.026
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.01849
 0.01417 0.01129 0.01279
@@ -12944,11 +12944,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.stby.10.illum"
+name "ky97a.stby.10.illum"
 data 8
 Cube.013
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.01849
 0.01417 0.01129 0.01279
@@ -12964,11 +12964,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.stby.100"
+name "ky97a.stby.100"
 data 8
 Cube.021
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.01864
 0.01417 0.01129 0.02164
@@ -12984,11 +12984,11 @@ refs 4
 0 0.179716 0.535205
 kids 0
 OBJECT poly
-name "ky96a.stby.100.illum"
+name "ky97a.stby.100.illum"
 data 8
 Cube.008
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.01864
 0.01417 0.01129 0.02164
@@ -13004,11 +13004,11 @@ refs 4
 0 0.178961 0.360508
 kids 0
 OBJECT poly
-name "ky96a.swap_btn.illum"
+name "ky97a.swap_btn.illum"
 data 8
 Cube.034
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 96
 0.01196 -0.01475 0.02972
 0.01196 -0.01411 0.03036
@@ -13704,11 +13704,11 @@ refs 4
 0 0.490138 0.01317
 kids 0
 OBJECT poly
-name "ky96a.swap_btn.norm"
+name "ky97a.swap_btn.norm"
 data 8
 Cube.006
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 96
 0.01196 -0.01475 0.02972
 0.01196 -0.01411 0.03036
@@ -14404,11 +14404,11 @@ refs 4
 0 0.346392 0.012705
 kids 0
 OBJECT poly
-name "ky96a.use.001"
+name "ky97a.use.001"
 data 8
 Cube.025
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.03882
 0.01417 0.01129 0.03312
@@ -14424,11 +14424,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.use.001.illum"
+name "ky97a.use.001.illum"
 data 8
 Cube.012
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.03882
 0.01417 0.01129 0.03312
@@ -14444,11 +14444,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.use.01"
+name "ky97a.use.01"
 data 8
 Cube.024
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.04482
 0.01417 0.01129 0.03912
@@ -14464,11 +14464,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.use.01.illum"
+name "ky97a.use.01.illum"
 data 8
 Cube.011
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.04482
 0.01417 0.01129 0.03912
@@ -14484,11 +14484,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.use.1"
+name "ky97a.use.1"
 data 8
 Cube.023
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.05239
 0.01417 0.01129 0.04669
@@ -14504,11 +14504,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.use.1.illum"
+name "ky97a.use.1.illum"
 data 8
 Cube.010
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.05239
 0.01417 0.01129 0.04669
@@ -14524,11 +14524,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.use.10"
+name "ky97a.use.10"
 data 8
 Cube.022
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.05839
 0.01417 0.01129 0.05269
@@ -14544,11 +14544,11 @@ refs 4
 1 0.073546 0.535205
 kids 0
 OBJECT poly
-name "ky96a.use.10.illum"
+name "ky97a.use.10.illum"
 data 8
 Cube.009
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.05839
 0.01417 0.01129 0.05269
@@ -14564,11 +14564,11 @@ refs 4
 1 0.073277 0.360508
 kids 0
 OBJECT poly
-name "ky96a.use.100"
+name "ky97a.use.100"
 data 8
 Cube.020
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.05854
 0.01417 0.01129 0.06154
@@ -14584,11 +14584,11 @@ refs 4
 0 0.179716 0.535205
 kids 0
 OBJECT poly
-name "ky96a.use.100.illum"
+name "ky97a.use.100.illum"
 data 8
 Cube.007
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 4
 0.01417 0.01129 0.05854
 0.01417 0.01129 0.06154
@@ -14604,11 +14604,11 @@ refs 4
 0 0.178961 0.360508
 kids 0
 OBJECT poly
-name "ky96a.vol_knob"
+name "ky97a.vol_knob"
 data 10
 Circle.020
 crease 30.0
-texture "ky96a.png"
+texture "ky97a.png"
 numvert 488
 0.02351 -0.00678 -0.03368
 0.02367 -0.00774 -0.03854

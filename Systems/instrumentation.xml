@@ -106,6 +106,7 @@
 	<turn-indicator>
 		<name>turn-indicator</name>
 		<number>0</number>
+		<new-default-power-path>1</new-default-power-path>
 	</turn-indicator>
 	
 	<vertical-speed-indicator>
