@@ -1,7 +1,4 @@
-<?xml version="1.0"?>
-
-<!-- Cessna 140 Fuel System, based on C172p fuel system-->
-
+<?xml version="1.0" encoding="UTF-8"?>
 <system name="fuel">	
 	<!-- *********************************************************************************** -->
 	<!-- Main tanks: 0 and 1                                                                 -->
@@ -9,11 +6,7 @@
 	<!-- Fuel Flow Rates in pounds per second                                                -->
 	<!-- *********************************************************************************** -->
 	
-	<!-- ****************************************************** -->
-	<!-- Collector Tank 2 level-maintenance                     -->
-	<!-- ****************************************************** -->
-	<channel name="To Tank2">
-		<!-- from Tank 0 (to Collector Tank 2) -->
+	<channel name="Left main tank">
 		<fcs_function name="propulsion/tank[0]/contents-volume-gal">
 			<function>
 				<quotient>
@@ -22,18 +15,24 @@
 				</quotient>
 			</function>
 		</fcs_function>
-		<switch name="fuel/from-tank0-to-tank2">
+		
+		<switch name="propulsion/tank[0]/to-collector-tank-flow-rate-pps">
 			<default value="0"/>
 			<test logic="AND" value="0.1">
 				propulsion/tank[0]/priority EQ 1 
 				propulsion/tank[0]/contents-volume-gal GT propulsion/tank[0]/unusable-volume-gal
-				/consumables/fuel/tank[2]/level-lbs LT 0.05
-				propulsion/tank[2]/priority EQ 1
+				propulsion/tank[2]/contents-lbs LT 0.05
+				/controls/fuel/tank-selector EQ 0
 				accelerations/Nz GE 0
 			</test>
 		</switch>
 		
-		<!-- from Tank 1 (to Collector Tank 2) -->
+		<summer name="propulsion/tank[0]/external-flow-rate-pps">
+			<input>-propulsion/tank[0]/to-collector-tank-flow-rate-pps</input>
+		</summer>
+	</channel>
+	
+	<channel name="Right main tank">
 		<fcs_function name="propulsion/tank[1]/contents-volume-gal">
 			<function>
 				<quotient>
@@ -42,54 +41,38 @@
 				</quotient>
 			</function>
 		</fcs_function>
-		<switch name="fuel/from-tank1-to-tank2">
+		
+		<switch name="propulsion/tank[1]/to-collector-tank-flow-rate-pps">
 			<default value="0"/>
 			<test logic="AND" value="0.1">
 				propulsion/tank[1]/priority EQ 1 
 				propulsion/tank[1]/contents-volume-gal GT propulsion/tank[1]/unusable-volume-gal
-				/consumables/fuel/tank[2]/level-lbs LT 0.05
-				propulsion/tank[2]/priority EQ 1
+				propulsion/tank[2]/contents-lbs LT 0.05
+				/controls/fuel/tank-selector EQ 1
 				accelerations/Nz GE 0
 			</test>
 		</switch>
+		
+		<summer name="propulsion/tank[1]/external-flow-rate-pps">
+			<input>-propulsion/tank[1]/to-collector-tank-flow-rate-pps</input>
+		</summer>
 	</channel>
 	
 	<!-- Total from Tank 0 and Tank 1 to Collector Tank 2 -->
-	<channel name="Total flow rate into tank 2">
+	<channel name="Collector tank">
 		<summer name="tank0 and 1 to tank2">
-			<input>fuel/from-tank0-to-tank2</input>
-			<input>fuel/from-tank1-to-tank2</input>
+			<input>propulsion/tank[0]/to-collector-tank-flow-rate-pps</input>
+			<input>propulsion/tank[1]/to-collector-tank-flow-rate-pps</input>
 			<output>propulsion/tank[2]/external-flow-rate-pps</output>
-		</summer>
-	</channel>
-	
-	<!-- ****************************************************** -->
-	<!-- FLOW RATE from each MAIN TANK (consumption)            -->
-	<!-- ****************************************************** -->
-	
-	<channel name="Total flow rates">
-		<summer name="fuel/tank0-flow-rate">
-			<input>-fuel/from-tank0-to-tank2</input>
-			<output>propulsion/tank[0]/external-flow-rate-pps</output>
-		</summer>
-		
-		<summer name="fuel/tank1-flow-rate">
-			<input>-fuel/from-tank1-to-tank2</input>
-			<output>propulsion/tank[1]/external-flow-rate-pps</output>
 		</summer>
 	</channel>
 	
 	<channel name="fuel-system">
 		<switch name="/engines/engine[0]/already-started-in-session">
-			<default value="0"/>
-			<test logic="AND" value="/engines/engine[0]/already-started-in-session">
-				/engines/engine[0]/already-started-in-session GT 0
-			</test>
+			<default value="/engines/engine[0]/already-started-in-session"/>
 			<test value="1">
-				/fdm/jsbsim/propulsion/engine[0]/set-running GT 0
+				propulsion/engine[0]/set-running GT 0
 			</test>
-			<output>/engines/engine[0]/already-started-in-session</output>
 		</switch>
 	</channel>
-	
 </system>

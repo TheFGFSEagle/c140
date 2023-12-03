@@ -43,6 +43,18 @@
 		</offsets>
 	</model>
 	
+	<!-- controls -->
+	<model>
+		<name>FuelSelector</name>
+		<path>Controls/fuel-selector/fuel-selector.xml</path>
+		<offsets>
+			<x-m>-1.7</x-m>
+			<y-m>0.08</y-m>
+			<z-m>-0.377</z-m>
+			<pitch-deg>-0.87</pitch-deg>
+		</offsets>
+	</model>
+	
 	<!-- INSTRUMENT PANEL -->
 	<!-- Instruments -->
 	<!-- 80mm -->

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	 <path>fuel-selector.ac</path>
+	 
+	 <animation>
+	 	<type>knob</type>
+	 	<object-name>Handle</object-name>
+	 	<axis>
+	 		<z>1</z>
+	 	</axis>
+	 	<property>controls/fuel/tank-selector</property>
+	 	<factor>90</factor>
+	 	<action>
+	 		<binding>
+	 			<command>property-adjust</command>
+	 			<property>controls/fuel/tank-selector</property>
+	 			<factor>1</factor>
+	 			<min>0</min>
+	 			<max>2</max>
+	 		</binding>
+	 	</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>fuel-selector</tooltip-id>
+				<label>Fuel selector: %s</label>
+				<measure-text>Fuel selector: Right main</measure-text>
+				<property>controls/fuel/tank-selector</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Off", "Right main", "Left main"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+</PropertyList>
